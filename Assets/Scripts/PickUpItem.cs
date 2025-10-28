@@ -7,10 +7,23 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] float pickUpDistance = 1.5f;
     [SerializeField] float ttl = 10f;
 
+    public Items items;
+    public int count = 1;
+
+
     private void Awake()
     {
         // When an item appears, it finds a player from the GameManager.
         player = GameManager.instance.player.transform;
+    }
+
+    public void Set(Items items, int count)
+    {
+        this.items = items;
+        this.count = count;
+
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.sprite = items.icon;
     }
 
     private void Update()
@@ -36,6 +49,15 @@ public class PickUpItem : MonoBehaviour
         // When an item reaches the player (very close), it is destroyed
         if (distance < 0.1f)
         {
+            if(GameManager.instance.inventoryContainer != null)
+            {
+                GameManager.instance.inventoryContainer.Add(items, count);
+            }
+            else
+            {
+                Debug.LogWarning("No inventory container attached to the game manager");
+            }
+
             Destroy(gameObject);
         }
     }
