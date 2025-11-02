@@ -8,6 +8,14 @@ public class ToolBarController : MonoBehaviour
 
     public Action<int> onChange;
 
+    public Items GetItems
+    {
+        get
+        {
+            return GameManager.instance.inventoryContainer.slot[selectedTool].items;
+        }
+    }
+
     internal void Set(int id)
     { 
         selectedTool = id;

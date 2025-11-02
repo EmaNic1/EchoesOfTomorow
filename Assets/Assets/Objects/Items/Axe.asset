@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Axe
   stackable: 0
   icon: {fileID: 2881863392804303226, guid: 654437c70fec2874e8f8bf4ec43dcf4e, type: 3}
+  onAction: {fileID: 11400000, guid: 7ba2b71a84c4aef42a670e69f8d0c4fa, type: 2}

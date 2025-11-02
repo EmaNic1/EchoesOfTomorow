@@ -15,3 +15,6 @@ MonoBehaviour:
   name: Hoe
   stackable: 0
   icon: {fileID: 1281756186344558802, guid: 654437c70fec2874e8f8bf4ec43dcf4e, type: 3}
+  onAction: {fileID: 0}
+  onTileMapAction: {fileID: 11400000, guid: cea922c469a64b1488ca3266f116e6a3, type: 2}
+  onItemUsed: {fileID: 0}

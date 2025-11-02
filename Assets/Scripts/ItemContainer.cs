@@ -70,4 +70,36 @@ public class ItemContainer : ScriptableObject
     {
         OnInventoryChanged?.Invoke();
     }
+
+    public void RemoveItem(Items removeItem, int count = 1)
+    {
+        if (removeItem.stackable)
+        {
+            ItemSlot itemSlot = slot.Find(x => x.items == removeItem);
+            if(itemSlot == null)
+            {
+                return;
+            }
+            itemSlot.count -= count;
+            if(itemSlot.count < 0)
+            {
+                itemSlot.Clear();
+            }
+        }
+        else
+        {
+            while(count > 0)
+            {
+                count -= 1;
+
+                ItemSlot itemSlot = slot.Find(x => x.items == removeItem);
+                if(itemSlot == null)
+                {
+                    return;
+                }
+
+                itemSlot.Clear();
+            }
+        }
+    }
 }

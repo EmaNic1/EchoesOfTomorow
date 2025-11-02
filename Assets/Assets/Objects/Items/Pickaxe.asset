@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Pickaxe
   stackable: 0
   icon: {fileID: 1716702135773172386, guid: 654437c70fec2874e8f8bf4ec43dcf4e, type: 3}
+  onAction: {fileID: 11400000, guid: bdb7f2df3baac6f41aefe1075b292779, type: 2}
