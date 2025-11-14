@@ -153,3 +153,4 @@ MonoBehaviour:
   pickUpDrop: {fileID: 6115545311321219662, guid: ea64df49b5ab2b14e92841c0070b5313, type: 3}
   dropCount: 5
   spread: 0.7
+  nodeType: 1

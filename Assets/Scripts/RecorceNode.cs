@@ -1,41 +1,50 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
+/// <summary>
+/// mazgas
+/// </summary>
+
+[RequireComponent(typeof(BoxCollider2D))]//automatiskai pridedamas box collider
 public class RecorceNode : ToolHit
 {
-    [SerializeField] GameObject pickUpDrop;
+    [SerializeField] GameObject pickUpDrop;//prefab nukrenta ant zemes
     [SerializeField] int dropCount = 5;
     [SerializeField] float spread = 0.7f;
-    [SerializeField] ResourceNodeType nodeType;
+    [SerializeField] ResourceNodeType nodeType;//koks resurso tipas
 
 
     public override void Hit()
     {
-        // As long as there are still dropCount remaining, the loop continues.
-        // dropCount-- � decrements the number of drops remaining.
+        // Ciklas tęsiasi tol, kol yra „dropCount“.
+        // dropCount-- – sumažina „dropCount“ skaičių.
         while (dropCount > 0)
         {
             dropCount--;
 
-            // The starting position is where the tree stands.
+            // pradine padetis yra ta kurioje stovi naikinamas objektas
             Vector3 position = transform.position;
 
-            // position.x and position.y are changed randomly so that the items are not in one place but scattered around the tree.
+            // position.x ir position.y keičiami atsitiktinai, kad elementai nebūtų vienoje vietoje, o būtų išmėtyti po objektą.
             position.x += spread * UnityEngine.Random.value - spread / 2;
             position.y += spread * UnityEngine.Random.value - spread / 2;
 
-            // the position is set to the calculated position
+            // pozicija nustatoma pagal apskaičiuotą poziciją
             GameObject go = Instantiate(pickUpDrop);
             go.transform.position = position;
         }
 
-        // Destroy the tree
+        // Destroy the object
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// tikrina ar su irankiu gali hitinti objekta
+    /// </summary>
+    /// <param name="canBeHit"></param>
+    /// <returns></returns>
     public override bool CanBeHit(List<ResourceNodeType> canBeHit)
     {
         return canBeHit.Contains(nodeType);

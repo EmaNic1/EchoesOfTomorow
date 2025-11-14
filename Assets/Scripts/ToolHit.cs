@@ -9,6 +9,11 @@ public class ToolHit : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// ar gali but pataikyta(metodas perrasomas kitose klasese)
+    /// </summary>
+    /// <param name="canBeHit"></param>
+    /// <returns></returns>
     public virtual bool CanBeHit(List<ResourceNodeType> canBeHit)
     {
         return true;

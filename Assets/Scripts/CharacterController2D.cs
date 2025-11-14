@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
+/// <summary>
+/// judejimas ir animacija
+/// </summary>
+
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterController2D : MonoBehaviour
 {
@@ -19,24 +23,24 @@ public class CharacterController2D : MonoBehaviour
 
     private void Update()
     {
-        // Reads direct input from the Input axes; values ​​will be -1, 0, or 1.
+        // Nuskaito tiesioginę įvestį iš įvesties ašių; reikšmės bus -1, 0 arba 1.
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        // Creates a 2D vector that we will later use to determine movement.
+        //Sukuria 2D vektorių, kurį vėliau naudosime judėjimui nustatyti.
         motionVector = new Vector2(horizontal, vertical);
 
-        // Sends the current input values ​​to the Animator parameters named "horizontal" and "vertical".
-        // These parameters are often used in blend trees or animation transitions to allow
-        // walking/running/standing depending on direction.
+        // Siunčia dabartines įvesties vertes į animatoriaus parametrus, vadinamus „horizontal“ ir „vertical“.
+        // Šie parametrai dažnai naudojami maišymo medžiuose arba animacijos perėjimuose, kad būtų galima
+        // vaikščioti / bėgti / stovėti priklausomai nuo krypties.
         animator.SetFloat("horizontal", horizontal);
         animator.SetFloat("vertical", vertical);
 
-        // Checks if there is any input (if at least one axis value is not 0).
+        // Patikrina, ar yra įvesties duomenų (jei bent viena ašies reikšmė nėra 0).
         moving = horizontal != 0 || vertical != 0;
         animator.SetBool("moving", moving); // animatpr knows that the object ir moving
 
-        // If the character is moving (both axes not just 0), we update the last direction of movement.
+        //Jei veikėjas juda (abi ašys, ne tik 0), atnaujiname paskutinę judėjimo kryptį.
         if (horizontal != 0 || vertical != 0)
         {
             lastMotionVector = new Vector2(horizontal, vertical).normalized;
@@ -46,9 +50,8 @@ public class CharacterController2D : MonoBehaviour
     }
 
     /// <summary>
-    /// FixedUpdate() calls Move(), Move() sets the velocity of the Rigidbody2D via linearVelocity
+    /// „FixedUpdate()“ iškviečia „Move()“, „Move()“ nustato „Rigidbody2D“ greitį per „linearVelocity“
     /// </summary>
-
     void FixedUpdate()
     {
         Move();

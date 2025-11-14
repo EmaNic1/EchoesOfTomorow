@@ -1,13 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// valdo tai ka daro veikejas
+/// </summary>
+
 public class CharacterInteract : MonoBehaviour
 {
     CharacterController2D character;
     Rigidbody2D rb; // Object
-    [SerializeField] float offsetDistance = 1f; // How far away from the character the tool will be used
-    [SerializeField] float sizeOfInteractableArea = 1.2f; // What will be the area of ​​the "square" where
-                                                          // objects that can be hit are checked.
+    [SerializeField] float offsetDistance = 1f;
+    [SerializeField] float sizeOfInteractableArea = 1.2f;
     Charater cha;
     [SerializeField] MarkController markCotroller;
 
@@ -19,7 +22,7 @@ public class CharacterInteract : MonoBehaviour
     }
 
     /// <summary>
-    /// If the left mouse button is pressed, calls the Interact() method
+    /// Jei paspaudžiamas kairysis pelės mygtukas, iškviečiamas Interact() metodas.
     /// </summary>
     private void Update()
     {
@@ -31,22 +34,25 @@ public class CharacterInteract : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// vizualiai parodyti, ar veikėjas gali su kuo nors sąveikauti.
+    /// </summary>
     private void Check()
     {
-        // Calculates the location of a point in front of the character (based on the last direction of movement)
+        //Apskaičiuoja taško, esančio priešais veikėją, vietą (remiantis paskutine judėjimo kryptimi)
         Vector2 position = rb.position + character.lastMotionVector * offsetDistance;
 
-        // Creates a square-shaped area (OverlapBoxAll) and collects all Collider2D objects within that area
+        // Sukuria kvadrato formos sritį („OverlapBoxAll“) ir surenka visus „Collider2D“ objektus toje srityje.
         Collider2D[] colliders = Physics2D.OverlapBoxAll(
             position,
             new Vector2(sizeOfInteractableArea, sizeOfInteractableArea),
             0f
         );
 
-        // View all found objects
+        // Peržiūrėti visus rastus objektus
         foreach (Collider2D c in colliders)
         {
-            // If the object has a Interactable component, calls the Interact() method.
+            // Jei objektas turi Interactable komponentą, iškviečiamas Mark() metodas.
             Interactable hit = c.GetComponent<Interactable>();
             if (hit != null)
             {
@@ -58,22 +64,25 @@ public class CharacterInteract : MonoBehaviour
         markCotroller.Hide();
     }
 
+    /// <summary>
+    /// metodas kviečiamas, paspaudus dešinį pelės mygtuką
+    /// </summary>
     private void Interact()
     {
-        // Calculates the location of a point in front of the character (based on the last direction of movement)
+        // Apskaičiuoja taško, esančio priešais veikėją, vietą (remiantis paskutine judėjimo kryptimi)
         Vector2 position = rb.position + character.lastMotionVector * offsetDistance;
 
-        // Creates a square-shaped area (OverlapBoxAll) and collects all Collider2D objects within that area
+        // Sukuria kvadrato formos sritį („OverlapBoxAll“) ir surenka visus „Collider2D“ objektus toje srityje.
         Collider2D[] colliders = Physics2D.OverlapBoxAll(
             position,
             new Vector2(sizeOfInteractableArea, sizeOfInteractableArea),
             0f
         );
 
-        // View all found objects
+        // Peržiūrėti visus rastus objektus
         foreach (Collider2D c in colliders)
         {
-            // If the object has a ToolHit component, calls the Hit() method.
+            // Jei objektas turi Interactable komponentą, iškviečiamas Interact() metodas.
             Interactable hit = c.GetComponent<Interactable>();
             if (hit != null)
             {

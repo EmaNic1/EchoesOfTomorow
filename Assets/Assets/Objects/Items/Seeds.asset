@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Items
   name: Seeds
   stackable: 1
-  icon: {fileID: -690995239620556034, guid: 654437c70fec2874e8f8bf4ec43dcf4e, type: 3}
+  icon: {fileID: 21300000, guid: f4a3d67f7a26f454187994bbfb657f3b, type: 3}
   onAction: {fileID: 0}
   onTileMapAction: {fileID: 11400000, guid: 9ec11c76b03f2ed4380dce095b4c4aa8, type: 2}
   onItemUsed: {fileID: 11400000, guid: 9ec11c76b03f2ed4380dce095b4c4aa8, type: 2}

@@ -4,13 +4,12 @@ using UnityEngine.Tilemaps;
 
 public class ToolControler : MonoBehaviour
 {
-    CharacterController2D character; // takes the lastMotion of the object
+    CharacterController2D character;
     Rigidbody2D rb; // Object
     ToolBarController toolBarController;
     Animator animator;
-    [SerializeField] float offsetDistance = 1f; // How far away from the character the tool will be used
-    [SerializeField] float sizeOfInteractableArea = 1.2f; // What will be the area of ​​the "square" where
-                                                          // objects that can be hit are checke
+    [SerializeField] float offsetDistance = 1f;
+    [SerializeField] float sizeOfInteractableArea = 1.2f;
     [SerializeField] MarkerManager markerManager;
     [SerializeField] TileMapReadController tileMapReadController;
     [SerializeField] float maxDistance = 1.5f;
@@ -32,15 +31,17 @@ public class ToolControler : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        SelectTile();
-        CabSelectCheck();
-        Marker();
+        SelectTile();//apskaičiuoja, kuri plytelė po pelės žymekliu
+        CabSelectCheck();//tikrina, ar žaidėjas pakankamai arti plytelės
+        Marker();//vizualizacija
         if (Input.GetMouseButtonDown(0))
         {
+            //bandomas pasaulio veiksmas
             if (UseToolWorld() == true)
             {
                 return;
             }
+            //Jei pasaulyje nebuvo veiksmų, bandomas Tilemap veiksmas
             UseToolGrid();
         }
     }
@@ -65,27 +66,30 @@ public class ToolControler : MonoBehaviour
 
     private bool UseToolWorld()
     {
-        // Calculates the location of a point in front of the character (based on the last direction of movement)
+        // Skaičiuoja vietą priekyje žaidėjo, kur bus naudojamas įrankis.
         Vector2 position = rb.position + character.lastMotionVector * offsetDistance;
 
+        //Gauname įrankį, kurį žaidėjas pasirinko įrankių juostoje
         Items item = toolBarController.GetItems;
         if (item == null)
         {
-            return false;
+            return false;//jei nėra jokio įrankio, metodas baigiasi
         }
         if(item.onAction == null)
         {
-            return false;
+            return false;//įrankis neturi world veiksmo logikos
         }
 
+        //Paleidžia įrankio animaciją.
         animator.SetTrigger("act");
-        bool complete = item.onAction.OnApply(position);
+        bool complete = item.onAction.OnApply(position); //Panaudojame įrankį pasaulyje
 
+        //jei objektas yra sunaudojamas
         if (complete == true)
         {
             if (item.onItemUsed != null)
             {
-                item.onItemUsed.OnItemUsed(item, GameManager.instance.inventoryContainer);
+                item.onItemUsed.OnItemUsed(item, GameManager.instance.inventoryContainer);//sumažina kiekį inventoriuje.
             }
         }
 
@@ -94,22 +98,26 @@ public class ToolControler : MonoBehaviour
 
     private void UseToolGrid()
     {
+        //tikriname, ar žaidėjas yra pakankamai arti plytelės
         if (selected == true)
         {
             Items item = toolBarController.GetItems;
             if (item == null)
             {
-                return;
+                return; //nėra įrankio
             }
             if(item.onTileMapAction == null)
             {
-                return;
+                return; //įrankis neturi Tilemap veiksmo logikos
             }
 
+            //Paleidžia įrankio animaciją.
             animator.SetTrigger("act");
+            //Panaudojame įrankį ant plytelės
             bool complete = item.onTileMapAction.OnApplyToTileMap(selecetedTilePosition, tileMapReadController);
 
-            if(complete == true)
+            //Jei veiksmas sėkmingas, sunaudojame įrankį inventoriuje.
+            if (complete == true)
             {
                 if(item.onItemUsed != null)
                 {

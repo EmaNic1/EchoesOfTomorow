@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// tevine klase visiems ui elementams
+/// </summary>
+
 public class ItemPanel : MonoBehaviour
 {
-    public ItemContainer inventory;
-    public List<InventoryButton> buttons;
+    public ItemContainer inventory;//conteinerio panel
+    public List<InventoryButton> buttons;//mygtuku sarasas
 
     protected virtual void Start()
     {
@@ -13,8 +17,8 @@ public class ItemPanel : MonoBehaviour
 
     public void Init()
     {
-        SetIndex();
-        Show();
+        SetIndex();//nustatomas mygtuko indeksas
+        Show();//atvaizduojama inventoriaus busena
         inventory.OnInventoryChanged += Show;
     }
 
@@ -25,16 +29,23 @@ public class ItemPanel : MonoBehaviour
 
     private void SetIndex()
     {
+        //kiekvienam mygtukui suteikiamas indeksas
         for (int i = 0; i < inventory.slot.Count && i < buttons.Count; i++)
             buttons[i].SetIndex(i);
     }
 
+    /// <summary>
+    /// atvaizdavimo funkcija
+    /// </summary>
     public virtual void Show()
     {
+        //einame per visas pozicijas ir mygtukus
         for (int i = 0; i < inventory.slot.Count && i < buttons.Count; i++)
         {
+            //jei vieta tuscia, mygtukas isvalomas
             if (inventory.slot[i].items == null)
                 buttons[i].Clean();
+            //kita atveju mygtuko duomenis atnaujina
             else
                 buttons[i].Set(inventory.slot[i]);
 
@@ -43,5 +54,9 @@ public class ItemPanel : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// skirta perrasyti paveldetose klasese
+    /// </summary>
+    /// <param name="id"></param>
     public virtual void OnClick(int id) { }
 }

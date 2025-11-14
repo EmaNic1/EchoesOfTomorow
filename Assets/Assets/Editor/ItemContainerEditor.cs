@@ -1,9 +1,16 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(ItemContainer))]
+/// <summary>
+/// papildomas mygtukas inspector lange
+/// </summary>
+
+[CustomEditor(typeof(ItemContainer))]//atributas naudojamas inspektoriuje
 public class ItemContainerEditor : Editor
 {
+    /// <summary>
+    /// isvalo visa inventoriu vienu mygtuko paspaudimu
+    /// </summary>
     public override void OnInspectorGUI()
     {
         ItemContainer container = target as ItemContainer;

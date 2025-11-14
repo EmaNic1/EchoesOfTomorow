@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    public GameObject player;
-    public ItemContainer inventoryContainer;
-    public ItemDragAndDropController dragAndDropController;
+    public GameObject player;//veikejas
+    public ItemContainer inventoryContainer;//inventorius
+    public ItemDragAndDropController dragAndDropController;//drag n drop sistema
 }

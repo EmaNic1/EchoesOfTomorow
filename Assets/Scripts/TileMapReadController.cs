@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+/// <summary>
+/// peles pozicija pavercia i tile map koordinates
+/// </summary>
+
 public class TileMapReadController : MonoBehaviour
 {
     [SerializeField] Tilemap tilemap;
     public CropsManager cropsManager;
 
+    /// <summary>
+    /// peles koordinate is ekrano
+    /// </summary>
+    /// <param name="position"></param>
+    /// <param name="mousePosition"></param>
+    /// <returns></returns>
     public Vector3Int GetGridBase(Vector2 position, bool mousePosition = false)
     {
         Vector3 worldPosition;
@@ -21,11 +31,17 @@ public class TileMapReadController : MonoBehaviour
             worldPosition = position;
         }
 
+        //pavercia i pasaulio koordinate
         Vector3Int gridPosition = tilemap.WorldToCell(worldPosition);
 
         return gridPosition;
     }
 
+    /// <summary>
+    /// grazina konkrecia plytele pagal pozicija
+    /// </summary>
+    /// <param name="gridPosition"></param>
+    /// <returns></returns>
     public TileBase GetTileBase(Vector3Int gridPosition)
     {
         TileBase tile = tilemap.GetTile(gridPosition);

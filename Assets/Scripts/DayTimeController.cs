@@ -45,7 +45,6 @@ public class DayTimeController : MonoBehaviour
     {
         time = 0;
         days += 1;
-
     }
 
 }

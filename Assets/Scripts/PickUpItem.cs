@@ -1,4 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
+
+/// <summary>
+/// Objektas, kuris yra ant zemes
+/// </summary>
 
 public class PickUpItem : MonoBehaviour
 {
@@ -13,7 +17,7 @@ public class PickUpItem : MonoBehaviour
 
     private void Awake()
     {
-        // When an item appears, it finds a player from the GameManager.
+        //Kai pasirodo objektas, jis suranda žaidėją iš „GameManager“.
         player = GameManager.instance.player.transform;
     }
 
@@ -28,25 +32,25 @@ public class PickUpItem : MonoBehaviour
 
     private void Update()
     {
-        // If the ttl reaches 0, the item disappears (so as not to accumulate in the world).
+        // kai ttl pasiekia 0, objektas sunaikinamas
         ttl -= Time.deltaTime;
         if (ttl < 0)
         {
             Destroy(gameObject);
         }
 
-        // Calculates the distance between an object and the player.
+        // Skaiciuojamas atstumas tarp objekto ir zaidejo
         float distance = Vector3.Distance(transform.position, player.position);
         if(distance > pickUpDistance)
         {
-            // Nothing happens if the player is too far from the object
+            // nieko nevyksta kai zaidejas toli
             return;
         }
 
-        // If the player is close enough - the object moves towards him.
+        // jeigu zaidejas yra pakankamai arti, objektas pradeda judeti link jo
         transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
-        // When an item reaches the player (very close), it is destroyed
+        // kai objektas pasiekia zaideja, jis yra idedamas i inventoriu
         if (distance < 0.1f)
         {
             if(GameManager.instance.inventoryContainer != null)
@@ -57,7 +61,6 @@ public class PickUpItem : MonoBehaviour
             {
                 Debug.LogWarning("No inventory container attached to the game manager");
             }
-
             Destroy(gameObject);
         }
     }

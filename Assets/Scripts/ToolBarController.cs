@@ -1,6 +1,10 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// valdo tool bar
+/// </summary>
+
 public class ToolBarController : MonoBehaviour
 {
     [SerializeField] int toolBarSize = 9;
@@ -8,6 +12,9 @@ public class ToolBarController : MonoBehaviour
 
     public Action<int> onChange;
 
+    /// <summary>
+    /// Paima objekta is inventoriaus, kuris yra pazymetas toolbar'e
+    /// </summary>
     public Items GetItems
     {
         get
@@ -23,14 +30,17 @@ public class ToolBarController : MonoBehaviour
 
     private void Update()
     {
+        //leidzia zaidejui keisti pasirinkta daikta su scroll weel
         float delta = Input.mouseScrollDelta.y;
         if(Input.mouseScrollDelta.y != 0)
         {
+            //pereina vienu i prieki
             if(delta > 0)
             {
                 selectedTool += 1;
                 selectedTool = (selectedTool >= toolBarSize ? 0 : selectedTool);
             }
+            //pereina vienu atgal
             else
             {
                 selectedTool -= 1;

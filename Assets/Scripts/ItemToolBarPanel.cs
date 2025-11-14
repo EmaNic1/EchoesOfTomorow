@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Irankiu juosta
+/// </summary>
+
 public class ItemToolBarPanel : ItemPanel
 {
     [SerializeField] private ToolBarController controller;
     private int currentSelected = 0;
 
-    // Start() su bazinės klasės Start() kvietimu
     private void Start()
     {
-        Init();
-        controller.onChange += HighLight;
+        Init();//nustato mygtuku indeksus
+        controller.onChange += HighLight;//parodoma su mark, kad zaidejas yra pasirinkes kazkoki objekta
 
-        // Nustatyti currentSelected tik pirmam slot'ui su item
         currentSelected = -1;
+        //automatiskai uzdeda mark ant pirmo rasto objekto
         for (int i = 0; i < buttons.Count; i++)
         {
             if (inventory.slot[i].items != null)
@@ -22,7 +25,7 @@ public class ItemToolBarPanel : ItemPanel
             }
         }
 
-        // Tik jei randame slot su item, tada highlight
+        //jeigu rado, atnaujina
         if (currentSelected != -1)
             UpdateHighlight();
     }
@@ -31,11 +34,15 @@ public class ItemToolBarPanel : ItemPanel
     {
         if (buttons == null || buttons.Count == 0) return;
 
+        //einame per visus mygtukus ir pazymi objekta kuris sutampa su currentSeleceted
         for (int i = 0; i < buttons.Count; i++)
             buttons[i].Hihghlight(i == currentSelected);
     }
 
-    // Kai spaudžiamas toolbar mygtukas
+    /// <summary>
+    /// Paspaudus ant objekto jis pazymimas
+    /// </summary>
+    /// <param name="id"></param>
     public override void OnClick(int id)
     {
         if (controller != null)
@@ -44,19 +51,17 @@ public class ItemToolBarPanel : ItemPanel
         HighLight(id);
     }
 
-    // Highlight logika
     public void HighLight(int id)
     {
         if (buttons == null || buttons.Count == 0) return;
 
-        // Išjungia seną highlight, jei indeksas galiojantis
+        //isjungia sena pazymeta objekta
         if (currentSelected >= 0 && currentSelected < buttons.Count)
             buttons[currentSelected].Hihghlight(false);
 
-        // Nustato naują indeksą saugiai
         currentSelected = Mathf.Clamp(id, 0, buttons.Count - 1);
 
-        // Įjungia naują highlight
+        //atnaujina, kai yra pazymimas kitas objektas
         if (currentSelected >= 0 && currentSelected < buttons.Count)
             buttons[currentSelected].Hihghlight(true);
     }
