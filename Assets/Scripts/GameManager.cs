@@ -17,4 +17,5 @@ public class GameManager : MonoBehaviour
     public GameObject player;//veikejas
     public ItemContainer inventoryContainer;//inventorius
     public ItemDragAndDropController dragAndDropController;//drag n drop sistema
+    public DayTimeController timeController;
 }

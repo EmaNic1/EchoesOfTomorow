@@ -151,6 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecorceNode
   pickUpDrop: {fileID: 8178909544550256417, guid: 0da0af3c6169b3b43b5f0d75db1eea2f, type: 3}
+  items: {fileID: 11400000, guid: 8aeb67ce567051b488abadf5ae7cb2de, type: 2}
+  itemCountInOneDrop: 1
   dropCount: 5
   spread: 0.7
   nodeType: 2

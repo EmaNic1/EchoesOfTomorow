@@ -13,6 +13,7 @@ public class ToolControler : MonoBehaviour
     [SerializeField] MarkerManager markerManager;
     [SerializeField] TileMapReadController tileMapReadController;
     [SerializeField] float maxDistance = 1.5f;
+    [SerializeField] ToolAction onTilePickUp;
     //[SerializeField] CropsManager cropsManager;
     //[SerializeField] TileData plowableTiles;
     Vector3Int selecetedTilePosition;
@@ -104,6 +105,7 @@ public class ToolControler : MonoBehaviour
             Items item = toolBarController.GetItems;
             if (item == null)
             {
+                PickUpTile();
                 return; //nėra įrankio
             }
             if(item.onTileMapAction == null)
@@ -114,7 +116,7 @@ public class ToolControler : MonoBehaviour
             //Paleidžia įrankio animaciją.
             animator.SetTrigger("act");
             //Panaudojame įrankį ant plytelės
-            bool complete = item.onTileMapAction.OnApplyToTileMap(selecetedTilePosition, tileMapReadController);
+            bool complete = item.onTileMapAction.OnApplyToTileMap(selecetedTilePosition, tileMapReadController, item);
 
             //Jei veiksmas sėkmingas, sunaudojame įrankį inventoriuje.
             if (complete == true)
@@ -125,5 +127,15 @@ public class ToolControler : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void PickUpTile()
+    {
+        if(onTilePickUp == null)
+        {
+            return;
+        }
+
+        onTilePickUp.OnApplyToTileMap(selecetedTilePosition, tileMapReadController, null);
     }
 }

@@ -17,7 +17,7 @@ public class PlowTile : ToolAction
     /// <param name="gridPosition"></param>
     /// <param name="tileMapReadController"></param>
     /// <returns></returns>
-    public override bool OnApplyToTileMap(Vector3Int gridPosition, TileMapReadController tileMapReadController)
+    public override bool OnApplyToTileMap(Vector3Int gridPosition, TileMapReadController tileMapReadController, Items item)
     {
         //Naudoja TileMapReadController, kad gautų plytelę pagal tinklelio koordinatę.
         TileBase tileToPlow = tileMapReadController.GetTileBase(gridPosition);

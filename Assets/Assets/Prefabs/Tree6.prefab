@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1747430872941740858}
   - component: {fileID: 8249238375354511399}
   - component: {fileID: 1019771774433251435}
+  - component: {fileID: 3678425966962450136}
   m_Layer: 0
   m_Name: Tree6
   m_TagString: Untagged
@@ -151,6 +152,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   pickUpDrop: {fileID: 6115545311321219662, guid: ea64df49b5ab2b14e92841c0070b5313, type: 3}
+  items: {fileID: 11400000, guid: 9f8ab1dff92df2840b7cde8047ef3657, type: 2}
+  itemCountInOneDrop: 1
   dropCount: 5
   spread: 0.7
   nodeType: 1
+--- !u!114 &3678425966962450136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546987221249583862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864f77e65ad55ca468c0a03bdbd39c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeAgent

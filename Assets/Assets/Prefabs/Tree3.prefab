@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 9065625836322370390}
   - component: {fileID: 5246066843485229237}
   - component: {fileID: 5818601109575256099}
+  - component: {fileID: 6529389971256073276}
+  - component: {fileID: 7669754946211045623}
   m_Layer: 0
   m_Name: Tree3
   m_TagString: Untagged
@@ -151,6 +153,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   pickUpDrop: {fileID: 6115545311321219662, guid: ea64df49b5ab2b14e92841c0070b5313, type: 3}
+  items: {fileID: 11400000, guid: 9f8ab1dff92df2840b7cde8047ef3657, type: 2}
+  itemCountInOneDrop: 1
   dropCount: 5
   spread: 0.7
   nodeType: 1
+--- !u!114 &6529389971256073276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8674030563484097880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99fef1463138b5f41a2a8caf067f35cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSpawner
+  toSpawn: {fileID: 11400000, guid: d1886e529e4144641bb3139448069054, type: 2}
+  count: 1
+  spread: 2
+  probability: 0.01
+--- !u!114 &7669754946211045623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8674030563484097880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 864f77e65ad55ca468c0a03bdbd39c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeAgent

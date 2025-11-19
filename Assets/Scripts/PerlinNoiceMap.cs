@@ -19,7 +19,13 @@ public class ZoneMapGenerator : MonoBehaviour
     [Header("Object Prefabs")]
     [SerializeField] private GameObject[] treePrefabs;
     [SerializeField] private GameObject[] rockPrefabs;
+    [SerializeField] private GameObject[] ruinsPrefabs;
     [SerializeField] private float objectChance = 0.05f;
+    [SerializeField] private float ruinsChance = 0.05f;
+
+    [Header("Player House")]
+    [SerializeField] private GameObject playerHousePrefab;
+    [SerializeField] private Vector2Int playerHouseTilePos = new Vector2Int(42, 20);
 
     [Header("Map Settings")]
     [SerializeField] private int mapWidth = 100;
@@ -29,16 +35,29 @@ public class ZoneMapGenerator : MonoBehaviour
 
     private ZoneType[,] zoneMap;
 
+
     private void Start()
     {
         //Nustatoma seed
-        Random.InitState(seed);
+         Random.InitState(seed);
         //Sukuriamas zoneMap masyvas
         zoneMap = new ZoneType[mapWidth, mapHeight];
         //Sukuriamos zonos
-        DefineZones();
+         DefineZones();
         //Sugeneruojamas žemėlapis
-        GenerateMap();
+         GenerateMap();
+         SpawnPlayerHouse();
+    }
+
+    private void SpawnPlayerHouse()
+    {
+        // nustatyta tile koordinatė
+        Vector3Int cell = new Vector3Int(playerHouseTilePos.x, playerHouseTilePos.y, 0);
+
+        // konvertuojama į world position
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        Instantiate(playerHousePrefab, worldPos, Quaternion.identity);
     }
 
     /// <summary>
@@ -143,7 +162,14 @@ public class ZoneMapGenerator : MonoBehaviour
                     //Kuo didesnis noise, tuo didesnė tikimybė, kad bus žolė(biomeTiles[1]).
                     case ZoneType.Grassland:
                         float noise = Mathf.PerlinNoise((x / noiseScale) + seedOffsetX, (y / noiseScale) + seedOffsetY);
-                        tile = noise < 0.3f ? biomeTiles[0] : biomeTiles[1]; // vanduo / žolė
+                        tile = noise < 0.3f ? biomeTiles[0] : biomeTiles[1];
+
+                        // SPAWNINA RUINS TIK ANT ŽOLĖS (ne ant vandens)
+                        if (tile == biomeTiles[1] && Random.value < ruinsChance)
+                        {
+                            GameObject ruin = ruinsPrefabs[Random.Range(0, ruinsPrefabs.Length)];
+                            Instantiate(ruin, worldPos, Quaternion.identity, transform);
+                        }
                         break;
                 }
 

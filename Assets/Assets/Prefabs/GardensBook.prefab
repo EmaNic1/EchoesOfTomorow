@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6538786739972255303}
   - component: {fileID: 3788653733056333021}
   - component: {fileID: 1634601637241595779}
+  - component: {fileID: 1898560295802412951}
   m_Layer: 0
   m_Name: GardensBook
   m_TagString: Untagged
@@ -137,3 +138,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.34413576, y: 0.44291937}
   m_EdgeRadius: 0
+--- !u!114 &1898560295802412951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7419121896010926762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55c7360c245c4a48923d5fe1bfa9cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BookInteractable

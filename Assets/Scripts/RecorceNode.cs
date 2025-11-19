@@ -11,6 +11,8 @@ using UnityEngine;
 public class RecorceNode : ToolHit
 {
     [SerializeField] GameObject pickUpDrop;//prefab nukrenta ant zemes
+    [SerializeField] Items items;
+    [SerializeField] int itemCountInOneDrop = 1;
     [SerializeField] int dropCount = 5;
     [SerializeField] float spread = 0.7f;
     [SerializeField] ResourceNodeType nodeType;//koks resurso tipas
@@ -31,9 +33,10 @@ public class RecorceNode : ToolHit
             position.x += spread * UnityEngine.Random.value - spread / 2;
             position.y += spread * UnityEngine.Random.value - spread / 2;
 
+            ItemSpawnManager.instance.SpawnItem(position, items, itemCountInOneDrop);
             // pozicija nustatoma pagal apskaičiuotą poziciją
-            GameObject go = Instantiate(pickUpDrop);
-            go.transform.position = position;
+            //GameObject go = Instantiate(pickUpDrop);
+            //go.transform.position = position;
         }
 
         // Destroy the object
