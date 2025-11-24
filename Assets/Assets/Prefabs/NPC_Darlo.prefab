@@ -150,3 +150,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45e00ff5587889848afc776e333640ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCInteractable
+  dialog: {fileID: 11400000, guid: a4496254097a57045b23a31598455131, type: 2}

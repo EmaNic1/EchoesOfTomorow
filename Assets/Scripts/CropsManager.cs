@@ -14,7 +14,7 @@ public class  CropTile
     public int growStage;
     public int growTimer;
     public SpriteRenderer renderer;
-    public float damage;
+    //public float damage;
     public Vector3Int position;
 
     public bool Complete
@@ -35,7 +35,7 @@ public class  CropTile
         growStage = 0;
         crop = null;
         renderer.gameObject.SetActive(false);
-        damage = 0;
+        //damage = 0;
     }
 }
 
@@ -69,14 +69,14 @@ public class CropsManager : TimeAgent
                 //targetTilemap.SetTile(cropTile.position, plowed);
             //}
 
-            cropTile.damage += 0.01f;
+            //cropTile.damage += 0.01f;
 
-            if(cropTile.damage > 1f)
-            {
-                cropTile.Harvested();
-                targetTilemap.SetTile(cropTile.position, plowed);
-                continue;
-            }
+            //if(cropTile.damage > 1f)
+            //{
+               //cropTile.Harvested();
+                //targetTilemap.SetTile(cropTile.position, plowed);
+                //continue;
+            //}
 
             if (cropTile.Complete)
             {

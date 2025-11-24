@@ -27,6 +27,22 @@ public class ZoneMapGenerator : MonoBehaviour
     [SerializeField] private GameObject playerHousePrefab;
     [SerializeField] private Vector2Int playerHouseTilePos = new Vector2Int(42, 20);
 
+    [Header("Kamstukas")]
+    [SerializeField] private GameObject kamstukasPrefab;
+    [SerializeField] private Vector2Int kamstukasTilePos = new Vector2Int(42, 20);
+
+    [Header("Darlo")]
+    [SerializeField] private GameObject darloPrefab;
+    [SerializeField] private Vector2Int darloTilePos = new Vector2Int(42, 20);
+
+    [Header("Aegas")]
+    [SerializeField] private GameObject aegasPrefab;
+    [SerializeField] private Vector2Int aegasTilePos = new Vector2Int(42, 20);
+
+    [Header("Mege")]
+    [SerializeField] private GameObject megePrefab;
+    [SerializeField] private Vector2Int megeTilePos = new Vector2Int(42, 20);
+
     [Header("Map Settings")]
     [SerializeField] private int mapWidth = 100;
     [SerializeField] private int mapHeight = 100;
@@ -39,14 +55,62 @@ public class ZoneMapGenerator : MonoBehaviour
     private void Start()
     {
         //Nustatoma seed
-         Random.InitState(seed);
+        Random.InitState(seed);
         //Sukuriamas zoneMap masyvas
         zoneMap = new ZoneType[mapWidth, mapHeight];
         //Sukuriamos zonos
-         DefineZones();
+        DefineZones();
         //Sugeneruojamas žemėlapis
-         GenerateMap();
-         SpawnPlayerHouse();
+        GenerateMap();
+        SpawnPlayerHouse();
+        SpawnKamstukas();
+        SpawnDarlo();
+        SpawnAegas();
+        SpawnMege();
+    }
+
+    private void SpawnKamstukas()
+    {
+        // nustatyta tile koordinatė
+        Vector3Int cell = new Vector3Int(kamstukasTilePos.x, kamstukasTilePos.y, 0);
+
+        // konvertuojama į world position
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        Instantiate(kamstukasPrefab, worldPos, Quaternion.identity);
+    }
+
+    private void SpawnDarlo()
+    {
+        // nustatyta tile koordinatė
+        Vector3Int cell = new Vector3Int(darloTilePos.x, darloTilePos.y, 0);
+
+        // konvertuojama į world position
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        Instantiate(darloPrefab, worldPos, Quaternion.identity);
+    }
+
+    private void SpawnAegas()
+    {
+        // nustatyta tile koordinatė
+        Vector3Int cell = new Vector3Int(aegasTilePos.x, aegasTilePos.y, 0);
+
+        // konvertuojama į world position
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        Instantiate(aegasPrefab, worldPos, Quaternion.identity);
+    }
+
+    private void SpawnMege()
+    {
+        // nustatyta tile koordinatė
+        Vector3Int cell = new Vector3Int(megeTilePos.x, megeTilePos.y, 0);
+
+        // konvertuojama į world position
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        Instantiate(megePrefab, worldPos, Quaternion.identity);
     }
 
     private void SpawnPlayerHouse()

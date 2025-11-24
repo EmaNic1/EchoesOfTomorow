@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28469afc6b68784469e9e4a80efe8e74, type: 3}
+  m_Name: KamstukoDialog
+  m_EditorClassIdentifier: Assembly-CSharp::DialogContainer
+  line:
+  - I see you're new here... You're not the first one thrown out by the machine.
+  - You're probably wondering what kind of machine this is. We called that machine
+    a time node. Every now and then, the machine sends people back to the past, when
+    the world wasn't... destroyed.
+  - Calm down. And so from the past. As far as you are concerned, you are now in
+    the future.
+  - Some kind of technology... Don't get too carried away, you won't understand it
+    now anyway. The most important thing now is for you to survive here... If you
+    can.
+  - So this place is called the Valley of Ruins. We named it that way because of
+    how everything looks now. Long ago, this place was amazing. But that's not what
+    we're talking about now...
+  - The survivors have formed communities, trying to survive in their own ways. You
+    too will have to find a way to survive. Here, take this paper, it will help you
+    decide how you can help our community.
+  - And before I forget, here's a detour map. The brightest places on the map are
+    now safe. I would advise you to be careful of the dark places on the map, after
+    the crisis, strange things started happening here...
+  - Well, I wish you luck. Don't die.
+  actor: {fileID: 11400000, guid: 56834ef145f5aad4f96f7363e62e6c54, type: 2}

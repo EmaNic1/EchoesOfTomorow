@@ -18,4 +18,6 @@ public class GameManager : MonoBehaviour
     public ItemContainer inventoryContainer;//inventorius
     public ItemDragAndDropController dragAndDropController;//drag n drop sistema
     public DayTimeController timeController;
+    public DialogSystem dialogSystem;
+    public SelectProfesion selectProfession;
 }

@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Inventory
   m_EditorClassIdentifier: Assembly-CSharp::ItemContainer
   slot:
-  - items: {fileID: 11400000, guid: 5b34f20287a8df342bca2008fda42d61, type: 2}
-    count: 0
-  - items: {fileID: 11400000, guid: a85bee61ec345f243bae2152fdf6b2c6, type: 2}
-    count: 0
-  - items: {fileID: 11400000, guid: d5a634ddaf9697f4ea51f807206177a3, type: 2}
-    count: 0
   - items: {fileID: 11400000, guid: d9be3df3a317f944fbedc5bc9d3efccb, type: 2}
-    count: 0
-  - items: {fileID: 11400000, guid: 6bcd5684bee18764391fb0520193e4f7, type: 2}
     count: 0
   - items: {fileID: 11400000, guid: 84be266b24e85b54786a87041be3622c, type: 2}
     count: 5
-  - items: {fileID: 11400000, guid: d16c66dc036908948b25c404c5c633d2, type: 2}
-    count: 5
-  - items: {fileID: 0}
+  - items: {fileID: 11400000, guid: 5b34f20287a8df342bca2008fda42d61, type: 2}
     count: 0
+  - items: {fileID: 11400000, guid: d5a634ddaf9697f4ea51f807206177a3, type: 2}
+    count: 0
+  - items: {fileID: 11400000, guid: a85bee61ec345f243bae2152fdf6b2c6, type: 2}
+    count: 0
+  - items: {fileID: 11400000, guid: 6bcd5684bee18764391fb0520193e4f7, type: 2}
+    count: 0
+  - items: {fileID: 11400000, guid: 3f73e3d9135359d48acf1d9ff1f96e58, type: 2}
+    count: 0
+  - items: {fileID: 11400000, guid: 9f8ab1dff92df2840b7cde8047ef3657, type: 2}
+    count: 20
   - items: {fileID: 0}
     count: 0
   - items: {fileID: 0}
