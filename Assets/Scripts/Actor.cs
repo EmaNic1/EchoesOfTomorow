@@ -5,6 +5,4 @@ public class Actor : ScriptableObject
 {
     public string name;
     public Sprite portrait;
-
-
 }

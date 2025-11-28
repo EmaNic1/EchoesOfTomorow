@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,7 +19,8 @@ public class DayTimeController : MonoBehaviour
     [SerializeField] Light2D globalLight;
 
     [SerializeField] TextMeshProUGUI text;
-    private int days;
+    [SerializeField] TextMeshProUGUI day;
+    private int days = 1;
 
     List<TimeAgent> agents;
 
@@ -31,6 +32,7 @@ public class DayTimeController : MonoBehaviour
     private void Start()
     {
         time = startAtTime;
+        UpdateDayText(); // iš karto atnaujina
     }
 
     public void Subscribe(TimeAgent agent)
@@ -71,6 +73,12 @@ public class DayTimeController : MonoBehaviour
         int hh = (int)hours;
         int mm = (int)minutes;
         text.text = hh.ToString("00") + ":" + mm.ToString("00");
+        UpdateDayText();
+    }
+
+    private void UpdateDayText()
+    {
+        day.text = days.ToString();
     }
 
     private void DayLight()
@@ -99,6 +107,7 @@ public class DayTimeController : MonoBehaviour
     {
         time = 0;
         days += 1;
+        UpdateDayText(); // atnaujina tekstą iš karto
     }
 
 }

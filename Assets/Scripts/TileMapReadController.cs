@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -11,6 +10,7 @@ public class TileMapReadController : MonoBehaviour
 {
     [SerializeField] Tilemap tilemap;
     public CropsManager cropsManager;
+    public TreeManager treeManager;
 
     /// <summary>
     /// peles koordinate is ekrano

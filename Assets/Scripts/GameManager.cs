@@ -20,4 +20,5 @@ public class GameManager : MonoBehaviour
     public DayTimeController timeController;
     public DialogSystem dialogSystem;
     public SelectProfesion selectProfession;
+    public CurrencySystem currencySystem;
 }

@@ -44,6 +44,7 @@ public class CropsManager : TimeAgent
     [SerializeField] TileBase plowed;
     [SerializeField] TileBase seeded;
     [SerializeField] Tilemap targetTilemap;
+    [SerializeField] TileBase grassTile; // žolė medžiams
     [SerializeField] GameObject cropsSpritePrefab;
 
     Dictionary<Vector2Int, CropTile> crops;
@@ -66,16 +67,16 @@ public class CropsManager : TimeAgent
 
             //if(cropTile.growStage == 0)
             //{
-                //targetTilemap.SetTile(cropTile.position, plowed);
+            //targetTilemap.SetTile(cropTile.position, plowed);
             //}
 
             //cropTile.damage += 0.01f;
 
             //if(cropTile.damage > 1f)
             //{
-               //cropTile.Harvested();
-                //targetTilemap.SetTile(cropTile.position, plowed);
-                //continue;
+            //cropTile.Harvested();
+            //targetTilemap.SetTile(cropTile.position, plowed);
+            //continue;
             //}
 
             if (cropTile.Complete)

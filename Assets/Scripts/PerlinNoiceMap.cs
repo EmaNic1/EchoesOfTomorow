@@ -27,6 +27,10 @@ public class ZoneMapGenerator : MonoBehaviour
     [SerializeField] private GameObject playerHousePrefab;
     [SerializeField] private Vector2Int playerHouseTilePos = new Vector2Int(42, 20);
 
+    //[Header("Player Start Position")]
+    //[SerializeField] private Transform player;
+    //[SerializeField] private Vector2Int playerStartTilePos = new Vector2Int(39, 17);
+
     [Header("Kamstukas")]
     [SerializeField] private GameObject kamstukasPrefab;
     [SerializeField] private Vector2Int kamstukasTilePos = new Vector2Int(42, 20);
@@ -67,7 +71,15 @@ public class ZoneMapGenerator : MonoBehaviour
         SpawnDarlo();
         SpawnAegas();
         SpawnMege();
+        //PlacePlayer();
     }
+
+    //private void PlacePlayer()
+    //{
+        //Vector3Int cell = new Vector3Int(playerStartTilePos.x, playerStartTilePos.y, 0);
+        //Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+        //player.position = worldPos;
+    //}
 
     private void SpawnKamstukas()
     {

@@ -19,6 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a85bee61ec345f243bae2152fdf6b2c6, type: 2}
   - {fileID: 11400000, guid: 6bcd5684bee18764391fb0520193e4f7, type: 2}
   - {fileID: 11400000, guid: 3f73e3d9135359d48acf1d9ff1f96e58, type: 2}
+  - {fileID: 11400000, guid: b88fb66aa4430ae4f8133b00c0d5326c, type: 2}
   plantGrowFasterDays: 0
   cropBonusPercent: 0
   treeGrowFasterDays: 0
