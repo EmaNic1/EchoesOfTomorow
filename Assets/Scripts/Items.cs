@@ -11,5 +11,5 @@ public class Items : ScriptableObject
     public ToolAction onTileMapAction;
     public ToolAction onItemUsed;
     public Crop crop;
-    public Tree tree;
+    public TreePlant tree;
 }

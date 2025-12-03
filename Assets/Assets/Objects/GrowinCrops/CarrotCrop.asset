@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CarrotCrop
   m_EditorClassIdentifier: Assembly-CSharp::Crop
   timeToGrow: 288
-  yield: {fileID: 11400000, guid: 84be266b24e85b54786a87041be3622c, type: 2}
+  yield: {fileID: 11400000, guid: 1be6055b4c3db214794472865f96f13e, type: 2}
   count: 5
   sprites:
   - {fileID: -169069907060183645, guid: c9541adf5f3743c439c05222e1d0f9df, type: 3}

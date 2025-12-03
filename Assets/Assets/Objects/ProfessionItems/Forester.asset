@@ -14,15 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProfessionData
   type: 2
   startingItems:
-  - {fileID: 11400000, guid: 5b34f20287a8df342bca2008fda42d61, type: 2}
-  - {fileID: 11400000, guid: d5a634ddaf9697f4ea51f807206177a3, type: 2}
-  - {fileID: 11400000, guid: a85bee61ec345f243bae2152fdf6b2c6, type: 2}
-  - {fileID: 11400000, guid: 6bcd5684bee18764391fb0520193e4f7, type: 2}
-  - {fileID: 11400000, guid: 3f73e3d9135359d48acf1d9ff1f96e58, type: 2}
-  - {fileID: 11400000, guid: 3f73e3d9135359d48acf1d9ff1f96e58, type: 2}
+  - item: {fileID: 11400000, guid: 5b34f20287a8df342bca2008fda42d61, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: d5a634ddaf9697f4ea51f807206177a3, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: a85bee61ec345f243bae2152fdf6b2c6, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 6bcd5684bee18764391fb0520193e4f7, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: d9be3df3a317f944fbedc5bc9d3efccb, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 3f73e3d9135359d48acf1d9ff1f96e58, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 04b402d957fce5342a2437fa19586e93, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: b8dec0cbd2e87404c85e6c09b691df2e, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: abdae45a25405d344a63b37bcc37edd4, type: 2}
+    amount: 5
   plantGrowFasterDays: 0
   cropBonusPercent: 0
   treeGrowFasterDays: 0
   woodBonusPercent: 0
-  rareTreeDropChance: 0
   unlockSpellBar: 0
+  professionBookPrefab: {fileID: 4544951605412873861, guid: 4303be35dd460af448c9b7fbacc58b1c, type: 3}

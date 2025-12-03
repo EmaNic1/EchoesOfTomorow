@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/Tree")]
-public class Tree : ScriptableObject
+public class TreePlant : ScriptableObject
 {
     public int timeToGrow = 10;
     public Items yield;

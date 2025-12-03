@@ -48,7 +48,7 @@ public class ItemSlot
 [CreateAssetMenu(menuName = "Data/Item Container")]//duomenu failas
 public class ItemContainer : ScriptableObject
 {
-    public List<ItemSlot> slot;//sarasas inventoriaus vietu
+    public List<ItemSlot> slot = new List<ItemSlot>();//sarasas inventoriaus vietu
     public event Action OnInventoryChanged;//zinoti kada atsinaujina
 
     /// <summary>

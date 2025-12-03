@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c589e271cbfe6d94eb3999a218cb44de, type: 3}
-  m_Name: Sapling
+  m_Name: Carrot
   m_EditorClassIdentifier: Assembly-CSharp::Items
-  name: Sapling
+  name: Carrot
   stackable: 1
-  icon: {fileID: 7037310533991791676, guid: 53f85c7454f013f43b4a88ab7a7a0aec, type: 3}
+  icon: {fileID: 8077752189207236412, guid: c9541adf5f3743c439c05222e1d0f9df, type: 3}
   onAction: {fileID: 0}
-  onTileMapAction: {fileID: 11400000, guid: eabe8256fa7c70442949f52f438a2407, type: 2}
-  onItemUsed: {fileID: 11400000, guid: eabe8256fa7c70442949f52f438a2407, type: 2}
+  onTileMapAction: {fileID: 0}
+  onItemUsed: {fileID: 0}
   crop: {fileID: 0}
-  tree: {fileID: 11400000, guid: a1ae3121a0eb23946ad5c0ef4da80717, type: 2}
+  tree: {fileID: 0}

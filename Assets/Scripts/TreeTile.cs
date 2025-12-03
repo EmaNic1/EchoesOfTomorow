@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class TreeTile : MonoBehaviour
+public class TreeTile
 {
-    public Tree tree;
+    public TreePlant tree;
     public int growStage;
     public int growTimer;
     public SpriteRenderer renderer;

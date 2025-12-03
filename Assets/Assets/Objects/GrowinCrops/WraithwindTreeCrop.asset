@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c28984dead0286b4cae240e1fd224032, type: 3}
-  m_Name: Tree
+  m_Name: WraithwindTreeCrop
   m_EditorClassIdentifier: Assembly-CSharp::Tree
-  timeToGrow: 10
-  yield: {fileID: 11400000, guid: 04b402d957fce5342a2437fa19586e93, type: 2}
+  timeToGrow: 480
+  yield: {fileID: 11400000, guid: 9f8ab1dff92df2840b7cde8047ef3657, type: 2}
   count: 5
   sprites:
-  - {fileID: 7037310533991791676, guid: 53f85c7454f013f43b4a88ab7a7a0aec, type: 3}
-  - {fileID: 8937996064043524422, guid: 53f85c7454f013f43b4a88ab7a7a0aec, type: 3}
-  - {fileID: -4426180523350237877, guid: 53f85c7454f013f43b4a88ab7a7a0aec, type: 3}
-  growthStageTime: 01000000050000000a000000
+  - {fileID: -4710875387547831830, guid: 1e9bfb6d9efa81046aff4e7fc97e2a5a, type: 3}
+  - {fileID: 8698964205563085183, guid: 1e9bfb6d9efa81046aff4e7fc97e2a5a, type: 3}
+  - {fileID: -5416018284217364960, guid: 1e9bfb6d9efa81046aff4e7fc97e2a5a, type: 3}
+  growthStageTime: 00000000a0000000e0010000
