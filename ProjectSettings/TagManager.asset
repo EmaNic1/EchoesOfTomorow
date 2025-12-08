@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - TentEntering
+  - BaseTilemap
+  - CropsTilemap
+  - Spawnpoint
   layers:
   - Default
   - TransparentFX

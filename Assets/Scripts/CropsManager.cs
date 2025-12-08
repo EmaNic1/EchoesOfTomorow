@@ -56,6 +56,15 @@ public class CropsManager : TimeAgent
         Init();
     }
 
+    // /// <summary>
+    // /// pridetas
+    // /// </summary>
+    // /// <param name="map"></param>
+    // public void SetTargetTilemap(Tilemap map)
+    // {
+    //     targetTilemap = map;
+    // }
+
     public void Tick()
     {
         foreach(CropTile cropTile in crops.Values)

@@ -17,6 +17,15 @@ public class TreeManager : TimeAgent
         Init();
     }
 
+    // /// <summary>
+    // /// pridetas
+    // /// </summary>
+    // /// <param name="map"></param>
+    // public void SetTargetTilemap(Tilemap map)
+    // {
+    //     targetTilemap = map;
+    // }
+
     public void Tick()
     {
         foreach (TreeTile treeTile in trees.Values)
