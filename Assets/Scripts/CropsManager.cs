@@ -44,6 +44,21 @@ public class CropsManager : TimeAgent
     [SerializeField] TileBase plowed;
     [SerializeField] TileBase seeded;
     [SerializeField] Tilemap targetTilemap;
+
+    Tilemap TargerTilemap
+    {
+        get
+        {
+            if(targetTilemap == null)
+            {
+                GameObject go = GameObject.Find("CropsTileMap");
+                if(go == null) {return null; }
+                targetTilemap = go.GetComponent<Tilemap>();
+            }
+            return targetTilemap;
+        }
+    }
+    
     [SerializeField] TileBase grassTile; // žolė medžiams
     [SerializeField] GameObject cropsSpritePrefab;
 
@@ -67,6 +82,8 @@ public class CropsManager : TimeAgent
 
     public void Tick()
     {
+        if(TargerTilemap == null){ return; }
+
         foreach(CropTile cropTile in crops.Values)
         {
             if (cropTile.crop == null)
@@ -112,11 +129,15 @@ public class CropsManager : TimeAgent
     /// <returns></returns>
     public bool Check(Vector3Int position)
     {
+        if(TargerTilemap == null){ return false; }
+
         return crops.ContainsKey((Vector2Int)position);
     }
 
     public void Plow(Vector3Int position)
     {
+        if(TargerTilemap == null){ return; }
+
         //Patikrina, ar šita plytelė jau yra crops žemėlapyje.
         if (crops.ContainsKey((Vector2Int)position))
         {
@@ -128,8 +149,10 @@ public class CropsManager : TimeAgent
 
     public void Seed(Vector3Int position, Crop toSeed)
     {
+        if(TargerTilemap == null){ return; }
+
         //Pakeičia isarta plytelę į „pasėtos“ (seeded) išvaizdą.
-        targetTilemap.SetTile(position, seeded);
+        TargerTilemap.SetTile(position, seeded);
 
         crops[(Vector2Int)position].crop = toSeed;
     }
@@ -140,21 +163,25 @@ public class CropsManager : TimeAgent
     /// <param name="position"></param>
     private void CreatePlowedTile(Vector3Int position)
     {
+        if(TargerTilemap == null){ return; }
+
         CropTile crop = new CropTile();
         crops.Add((Vector2Int)position, crop);
 
         GameObject go = Instantiate(cropsSpritePrefab);
-        go.transform.position = targetTilemap.CellToWorld(position);
+        go.transform.position = TargerTilemap.CellToWorld(position);
         go.SetActive(false);
         crop.renderer = go.GetComponent<SpriteRenderer>();
 
         crop.position = position;
 
-        targetTilemap.SetTile(position, plowed);
+        TargerTilemap.SetTile(position, plowed);
     }
 
     internal void PickUp(Vector3Int gridPosition)
     {
+        if(TargerTilemap == null){ return; }
+
         Vector2Int position = (Vector2Int)gridPosition;
         if(crops.ContainsKey(position) == false)
         {
@@ -164,9 +191,9 @@ public class CropsManager : TimeAgent
 
         if (cropTile.Complete)
         {
-            ItemSpawnManager.instance.SpawnItem(targetTilemap.CellToWorld(gridPosition), cropTile.crop.yield, cropTile.crop.count);
+            ItemSpawnManager.instance.SpawnItem(TargerTilemap.CellToWorld(gridPosition), cropTile.crop.yield, cropTile.crop.count);
 
-            targetTilemap.SetTile(gridPosition, plowed);
+            TargerTilemap.SetTile(gridPosition, plowed);
 
             cropTile.Harvested();
         }

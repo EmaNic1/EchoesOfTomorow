@@ -6,6 +6,19 @@ public class TreeManager : TimeAgent
 {
     [SerializeField] TileBase plantedTile;
     [SerializeField] Tilemap targetTilemap;
+
+    Tilemap TargerTilemap
+    {
+        get
+        {
+            if(targetTilemap == null)
+            {
+                targetTilemap = GameObject.Find("BaseTilemap").GetComponent<Tilemap>();
+            }
+            return targetTilemap;
+        }
+    }
+
     [SerializeField] GameObject spriteMark;
 
     Dictionary<Vector2Int, TreeTile> trees;
@@ -28,6 +41,8 @@ public class TreeManager : TimeAgent
 
     public void Tick()
     {
+        if(TargerTilemap == null){ return; }
+
         foreach (TreeTile treeTile in trees.Values)
         {
             if (treeTile.tree == null) continue;
@@ -58,13 +73,15 @@ public class TreeManager : TimeAgent
 
     public void Plant(Vector3Int position, TreePlant toPlant)
     {
+        if(TargerTilemap == null){ return; }
+
         if (trees.ContainsKey((Vector2Int)position)) return;
 
         TreeTile tree = new TreeTile();
         trees.Add((Vector2Int)position, tree);
 
         GameObject go = Instantiate(spriteMark);
-        go.transform.position = targetTilemap.CellToWorld(position);
+        go.transform.position = TargerTilemap.CellToWorld(position);
         go.SetActive(false);
         tree.renderer = go.GetComponent<SpriteRenderer>();
 
@@ -81,11 +98,13 @@ public class TreeManager : TimeAgent
         tree.position = position;
         tree.tree = toPlant;
 
-        targetTilemap.SetTile(position, plantedTile);
+        TargerTilemap.SetTile(position, plantedTile);
     }
 
     internal void PickUp(Vector3Int gridPosition)
     {
+        if(TargerTilemap == null){ return; }
+
         Vector2Int position = (Vector2Int)gridPosition;
         if (trees.ContainsKey(position) == false) return;
 
@@ -94,7 +113,7 @@ public class TreeManager : TimeAgent
         if (treeTile.Complete)
         {
             ItemSpawnManager.instance.SpawnItem(
-                targetTilemap.CellToWorld(gridPosition),
+                TargerTilemap.CellToWorld(gridPosition),
                 treeTile.tree.yield,
                 treeTile.tree.count
             );
