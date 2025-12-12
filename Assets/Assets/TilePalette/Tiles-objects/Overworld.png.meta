@@ -10407,7 +10407,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overworld_464
+      name: StonePile
       rect:
         serializedVersion: 2
         x: 256
@@ -24299,7 +24299,6 @@ TextureImporter:
       Overworld_461: -50811631
       Overworld_462: 241284173
       Overworld_463: -109881341
-      Overworld_464: 1268423455
       Overworld_465: 831586837
       Overworld_466: 276209717
       Overworld_467: -2091161395
@@ -24893,6 +24892,7 @@ TextureImporter:
       Overworld_998: 730660537
       Overworld_999: 1579655388
       Seeds: 1529104040
+      StonePile: 1268423455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

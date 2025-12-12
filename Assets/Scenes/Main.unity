@@ -2804,6 +2804,7 @@ GameObject:
   - component: {fileID: 164131143}
   - component: {fileID: 164131145}
   - component: {fileID: 164131144}
+  - component: {fileID: 164131146}
   m_Layer: 0
   m_Name: CropsTileMap
   m_TagString: Untagged
@@ -2947,6 +2948,23 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &164131146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164131142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854624dd083efef408fe5f7a4af9dbf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  plowed: {fileID: 11400000, guid: 0f6229e83416ab749b5de4519ffdd940, type: 2}
+  seeded: {fileID: 11400000, guid: c722ad1f914b10347b63c54f2365d414, type: 2}
+  container: {fileID: 11400000, guid: ec564b9cf8ba09e47af91f5452225c42, type: 2}
+  grassTile: {fileID: 11400000, guid: 8556caa78b4ae7b4cbacff8320482529, type: 2}
+  cropsSpritePrefab: {fileID: 6524902264407346929, guid: b2c99142f112c5a4aa6c73d8f9567383, type: 3}
 --- !u!1001 &580688228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3203,6 +3221,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7f89eb3b78198c4682404a19ee94fe5, type: 3}
+--- !u!1 &833622837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 833622839}
+  - component: {fileID: 833622838}
+  m_Layer: 0
+  m_Name: GlobalTimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &833622838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833622837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004eb7e7bf035a44cbffeb71ce815bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlobalTimeManager
+--- !u!4 &833622839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833622837}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &882078022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3697,6 +3759,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 882078024}
+  - {fileID: 833622839}
   - {fileID: 1827944335}
   - {fileID: 811467289}
   - {fileID: 58144689}

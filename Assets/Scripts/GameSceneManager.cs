@@ -49,6 +49,8 @@ public class GameSceneManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentScene));
+
 
         //yield return new WaitForEndOfFrame();
 
@@ -92,4 +94,5 @@ public class GameSceneManager : MonoBehaviour
         // 4. Atnaujinam currentScene
         currentScene = to;
     }
+
 }

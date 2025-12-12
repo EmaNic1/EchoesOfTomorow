@@ -8,6 +8,7 @@ public class InventoryController : MonoBehaviour
 {
     [SerializeField] GameObject panel;//pgr inventoriaus langas
     [SerializeField] GameObject tollBarPanel;//tool bar juosta
+    [SerializeField] GameObject statusPanel;
     public static bool IsInventoryOpen { get; private set; }//ar atodarytas inventorius
 
     private void Update()
@@ -25,6 +26,7 @@ public class InventoryController : MonoBehaviour
                 Time.timeScale = 1f;
 
             tollBarPanel.SetActive(!tollBarPanel.activeInHierarchy);
+            statusPanel.SetActive(!statusPanel.activeInHierarchy);
         }
     }
 }

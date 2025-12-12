@@ -40,7 +40,7 @@ public class ItemPanel : MonoBehaviour
     public virtual void Show()
     {
         //einame per visas pozicijas ir mygtukus
-        for (int i = 0; i < inventory.slot.Count && i < buttons.Count; i++)
+        for (int i = 0; i < buttons.Count; i++)
         {
             //jei vieta tuscia, mygtukas isvalomas
             if (inventory.slot[i].items == null)
