@@ -15,3 +15,10 @@ MonoBehaviour:
   name: Sword
   stackable: 0
   icon: {fileID: 8898105831609886387, guid: 654437c70fec2874e8f8bf4ec43dcf4e, type: 3}
+  onAction: {fileID: 0}
+  onTileMapAction: {fileID: 0}
+  onItemUsed: {fileID: 0}
+  crop: {fileID: 0}
+  tree: {fileID: 0}
+  isWeapon: 1
+  damage: 10

@@ -9,7 +9,6 @@ public class TileMapCropsManager : TimeAgent
     Tilemap targetTilemap;
 
     [SerializeField] CropsContainer container;
-    [SerializeField] TileBase grassTile; // žolė medžiams
 
     [SerializeField] GameObject cropsSpritePrefab;
 

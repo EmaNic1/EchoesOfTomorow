@@ -14,6 +14,7 @@ public class ToolControler : MonoBehaviour
     [SerializeField] TileMapReadController tileMapReadController;
     [SerializeField] float maxDistance = 1.5f;
     [SerializeField] ToolAction onTilePickUp;
+    AttackController attackController;
     //[SerializeField] CropsManager cropsManager;
     //[SerializeField] TileData plowableTiles;
     Vector3Int selecetedTilePosition;
@@ -25,6 +26,7 @@ public class ToolControler : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         toolBarController = GetComponent<ToolBarController>();
         animator = GetComponent<Animator>();
+        attackController = GetComponent<AttackController>();
     }
 
     /// <summary>
@@ -32,6 +34,11 @@ public class ToolControler : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            WeapomAction();
+        }
+
         SelectTile();//apskaičiuoja, kuri plytelė po pelės žymekliu
         CabSelectCheck();//tikrina, ar žaidėjas pakankamai arti plytelės
         Marker();//vizualizacija
@@ -45,6 +52,23 @@ public class ToolControler : MonoBehaviour
             //Jei pasaulyje nebuvo veiksmų, bandomas Tilemap veiksmas
             UseToolGrid();
         }
+    }
+
+    private void WeapomAction()
+    {
+        Items item = toolBarController.GetItems;
+        if (item == null)
+        {
+            return;//jei nėra jokio įrankio, metodas baigiasi
+        }
+
+        if(item.isWeapon == false)
+        {
+            return;
+        }
+
+        attackController.Attack(item.damage, character.lastMotionVector);
+
     }
 
     private void SelectTile()
