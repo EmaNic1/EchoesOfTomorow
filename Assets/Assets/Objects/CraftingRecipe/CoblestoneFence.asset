@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7225292b84a09d74abe4bd4444b17024, type: 3}
-  m_Name: WoodSticks
+  m_Name: CoblestoneFence
   m_EditorClassIdentifier: Assembly-CSharp::CraftingRecipe
   elements:
-  - items: {fileID: 11400000, guid: 9f8ab1dff92df2840b7cde8047ef3657, type: 2}
-    count: 1
+  - items: {fileID: 11400000, guid: 8aeb67ce567051b488abadf5ae7cb2de, type: 2}
+    count: 3
   output:
-    items: {fileID: 11400000, guid: 12ab86cd0563cc54ba208cd4f278afe9, type: 2}
+    items: {fileID: 11400000, guid: 2c513bcb1489fd547a341735c01dc6a3, type: 2}
     count: 1

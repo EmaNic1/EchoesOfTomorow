@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public ItemDragAndDropController dragAndDropController;//drag n drop sistema
     public DayTimeController timeController;
     public DialogSystem dialogSystem;
+    public PlacableObjectRef placableObjects;
     public SelectProfesion selectProfession;
     //public CurrencySystem currencySystem;
     public OnScreeMessageSystems messageSystem;

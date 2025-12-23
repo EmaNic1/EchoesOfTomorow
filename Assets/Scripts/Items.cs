@@ -12,6 +12,8 @@ public class Items : ScriptableObject
     public ToolAction onItemUsed;
     public Crop crop;
     public TreePlant tree;
+    public bool iconHighlight;
+    public GameObject itemPrefab;
 
     public bool isWeapon;
     public int damage = 10;

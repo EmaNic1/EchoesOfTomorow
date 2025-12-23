@@ -27,7 +27,7 @@ public class Traiding : MonoBehaviour
     {
         this.store = store;
         itemStorePanel.SetInventory(store.storeContent);
-
+        Time.timeScale = 0f;
         storePanel.SetActive(true);
         inventoryPanel.SetActive(true);
     }
@@ -35,7 +35,7 @@ public class Traiding : MonoBehaviour
     public void StopTrading()
     {
         store = null;
-
+        Time.timeScale = 1f;
         storePanel.SetActive(false);
         inventoryPanel.SetActive(false);
     }

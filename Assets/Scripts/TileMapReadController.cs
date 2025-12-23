@@ -11,6 +11,7 @@ public class TileMapReadController : MonoBehaviour
     [SerializeField] Tilemap tilemap;
     public CropsManager cropsManager;
     public TreeManager treeManager;
+    public PlacableObjectRef objecktManager;
 
     /// <summary>
     /// peles koordinate is ekrano
