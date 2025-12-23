@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28984dead0286b4cae240e1fd224032, type: 3}
   m_Name: WraithwindTreeCrop
   m_EditorClassIdentifier: Assembly-CSharp::Tree
-  timeToGrow: 480
+  timeToGrow: 700
   yield: {fileID: 11400000, guid: 9f8ab1dff92df2840b7cde8047ef3657, type: 2}
   count: 5
   sprites:
   - {fileID: -4710875387547831830, guid: 1e9bfb6d9efa81046aff4e7fc97e2a5a, type: 3}
   - {fileID: 8698964205563085183, guid: 1e9bfb6d9efa81046aff4e7fc97e2a5a, type: 3}
   - {fileID: -5416018284217364960, guid: 1e9bfb6d9efa81046aff4e7fc97e2a5a, type: 3}
-  growthStageTime: 00000000a0000000e0010000
+  growthStageTime: 00000000a0000000bc020000

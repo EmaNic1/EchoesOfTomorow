@@ -20,6 +20,8 @@ public class DayTimeController : MonoBehaviour
     [SerializeField] float startAtTime = 28800f; // ryte sekundem
     [SerializeField] Light2D globalLight;
 
+    [SerializeField] float morningTime = 28800f;
+
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] TextMeshProUGUI day;
     private int days = 1;
@@ -136,4 +138,17 @@ public class DayTimeController : MonoBehaviour
         time += timeToSkip;
     }
 
+    public void SkipToMorning()
+    {
+        float secondsToSkip = 0f;
+        if(time > morningTime)
+        {
+            secondsToSkip += secondInDay - time + morningTime;
+        }
+        else
+        {
+            secondsToSkip += morningTime - time;
+        }
+        SkipTime(secondsToSkip);
+    }
 }

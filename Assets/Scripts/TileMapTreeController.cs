@@ -167,7 +167,7 @@ public class TileMapTreeController : TimeAgent
 
         GameObject go = Instantiate(spriteMark);
         go.transform.position = targetTilemap.CellToWorld(position);
-        go.SetActive(true);
+        go.SetActive(false);
         tree.renderer = go.GetComponent<SpriteRenderer>();
 
         var collider = go.AddComponent<BoxCollider2D>();

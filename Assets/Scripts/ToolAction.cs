@@ -6,6 +6,10 @@
 
 public class ToolAction : ScriptableObject
 {
+    public int energyCost = 0;
+    
+
+
     /// <summary>
     /// pasaulio koordinatės, kur įrankis bus naudojamas
     /// </summary>

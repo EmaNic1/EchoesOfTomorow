@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     public DayTimeController timeController;
     public DialogSystem dialogSystem;
     public SelectProfesion selectProfession;
-    public CurrencySystem currencySystem;
+    //public CurrencySystem currencySystem;
     public OnScreeMessageSystems messageSystem;
+    public ScreenTint screenTint;
 }

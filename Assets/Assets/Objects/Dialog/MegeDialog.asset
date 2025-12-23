@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: MegeDialog
   m_EditorClassIdentifier: Assembly-CSharp::DialogContainer
   line:
-  - Labas, as Mege
+  - Hello, I'am Mage
+  - I'am gardner in this world!
+  - If you want you can sell or buy items in my shop!
+  - Good luck!
   actor: {fileID: 11400000, guid: 43832e6d9ee4f5f41a1934927661f18c, type: 2}

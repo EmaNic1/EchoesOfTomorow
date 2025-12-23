@@ -20,3 +20,7 @@ MonoBehaviour:
   onItemUsed: {fileID: 11400000, guid: eabe8256fa7c70442949f52f438a2407, type: 2}
   crop: {fileID: 0}
   tree: {fileID: 11400000, guid: 90086e8cf9f2d9f4b9fe8cf986f2db35, type: 2}
+  isWeapon: 0
+  damage: 10
+  price: 50
+  canBeSold: 1

@@ -15,4 +15,7 @@ public class Items : ScriptableObject
 
     public bool isWeapon;
     public int damage = 10;
+
+    public int price = 50;
+    public bool canBeSold = false;
 }

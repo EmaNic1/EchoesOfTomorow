@@ -1,50 +1,89 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class CurrencySystem : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI currencyText; // tekstas, kuris rodo pinigus
-    private int scrap; // tavo valiuta, pvz. Scrap
 
-    private void Start()
+    [SerializeField] int amount;
+    [SerializeField] TextMeshProUGUI text; // tekstas, kuris rodo pinigus
+
+    void Start()
     {
-        scrap = 500; // pradinė suma, gali keisti
-        UpdateUI();
+        amount = 500;
+        UpdateText();
     }
 
-    // Prideda pinigus
-    public void AddScrap(int amount)
+    private void UpdateText()
     {
-        scrap += amount;
-        UpdateUI();
+        text.text = amount.ToString();
     }
 
-    // Atima pinigus, grąžina true jei užteko, false jei ne
-    public bool SpendScrap(int amount)
+    internal void Add(int moneyGain)
     {
-        if (scrap >= amount)
+        amount += moneyGain;
+
+        UpdateText();
+    }
+
+    internal bool Check(int totalPrice)
+    {
+        return amount >= totalPrice;
+    }
+
+    internal void Decrease(int totalPrice)
+    {
+        amount -= totalPrice;
+        if(amount < 0)
         {
-            scrap -= amount;
-            UpdateUI();
-            return true;
+            amount = 0;
         }
-        else
-        {
-            Debug.Log("Not enough scrap!");
-            return false;
-        }
+        UpdateText();
     }
 
-    // Tikrina kiek turi pinigų
-    public int GetScrap()
-    {
-        return scrap;
-    }
 
-    // Atspindi UI
-    private void UpdateUI()
-    {
-        if (currencyText != null)
-            currencyText.text = scrap.ToString();
-    }
+
+    // private int scrap; // tavo valiuta, pvz. Scrap
+
+    // private void Start()
+    // {
+    //     scrap = 500; // pradinė suma, gali keisti
+    //     UpdateUI();
+    // }
+
+    // // Prideda pinigus
+    // public void AddScrap(int amount)
+    // {
+    //     scrap += amount;
+    //     UpdateUI();
+    // }
+
+    // // Atima pinigus, grąžina true jei užteko, false jei ne
+    // public bool SpendScrap(int amount)
+    // {
+    //     if (scrap >= amount)
+    //     {
+    //         scrap -= amount;
+    //         UpdateUI();
+    //         return true;
+    //     }
+    //     else
+    //     {
+    //         Debug.Log("Not enough scrap!");
+    //         return false;
+    //     }
+    // }
+
+    // // Tikrina kiek turi pinigų
+    // public int GetScrap()
+    // {
+    //     return scrap;
+    // }
+
+    // // Atspindi UI
+    // private void UpdateUI()
+    // {
+    //     if (currencyText != null)
+    //         currencyText.text = scrap.ToString();
+    // }
 }

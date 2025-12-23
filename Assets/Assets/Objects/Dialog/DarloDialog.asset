@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: DarloDialog
   m_EditorClassIdentifier: Assembly-CSharp::DialogContainer
   line:
-  - Labas. As Darlo
+  - Hello, I'am Darlo
+  - I'am forester in this world!
+  - If you want you can sell or buy items in my shop
+  - Good luck!
   actor: {fileID: 11400000, guid: c9b82a60ffdd3b349966c16091f5c622, type: 2}

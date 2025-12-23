@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: -4426180523350237877, guid: 53f85c7454f013f43b4a88ab7a7a0aec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99fef1463138b5f41a2a8caf067f35cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  toSpawn: {fileID: 11400000, guid: d1886e529e4144641bb3139448069054, type: 2}
+  toSpawn: {fileID: 11400000, guid: 04b402d957fce5342a2437fa19586e93, type: 2}
   count: 1
   spread: 2
   probability: 0.01

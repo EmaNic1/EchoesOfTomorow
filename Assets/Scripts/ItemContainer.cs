@@ -120,7 +120,7 @@ public class ItemContainer : ScriptableObject
             //sumazina kieki
             itemSlot.count -= count;
             //jeigu rado
-            if(itemSlot.count < 0)
+            if(itemSlot.count <= 0)
             {
                 //isvalo vieta
                 itemSlot.Clear();
@@ -140,9 +140,10 @@ public class ItemContainer : ScriptableObject
                 itemSlot.Clear();
             }
         }
+        NotifyChanged();
     }
 
-    internal object CheckFreeSpace()
+    internal bool CheckFreeSpace()
     {
         for(int i = 0; i < slot.Count; i++)
         {
@@ -159,13 +160,41 @@ public class ItemContainer : ScriptableObject
     {
         ItemSlot itemSlot = slot.Find(x => x.items == checkItem.items);
 
-        if (itemSlot == null) { return false; }
+        if (itemSlot == null) return false;
 
         if (checkItem.items.stackable)
         {
-            return itemSlot.count > checkItem.count;
+            return itemSlot.count >= checkItem.count;
         }
 
         return true;
     }
+
+
+    // internal object CheckFreeSpace()
+    // {
+    //     for(int i = 0; i < slot.Count; i++)
+    //     {
+    //         if(slot[i].items == null)
+    //         {
+    //             return true;
+    //         }
+    //     }
+
+    //     return false;
+    // }
+
+    // internal bool CheckItem(ItemSlot checkItem)
+    // {
+    //     ItemSlot itemSlot = slot.Find(x => x.items == checkItem.items);
+
+    //     if (itemSlot == null) { return false; }
+
+    //     if (checkItem.items.stackable)
+    //     {
+    //         return itemSlot.count > checkItem.count;
+    //     }
+
+    //     return true;
+    // }
 }

@@ -61,4 +61,9 @@ public class CharacterController2D : MonoBehaviour
     {
         rb.linearVelocity = motionVector * speed;
     }
+
+    void OnDisable()
+    {
+        rb.linearVelocity = Vector2.zero;
+    }
 }

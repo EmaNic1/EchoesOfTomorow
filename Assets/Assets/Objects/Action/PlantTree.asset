@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb8116c52011434ea1c354c918dc72f, type: 3}
   m_Name: PlantTree
   m_EditorClassIdentifier: Assembly-CSharp::PlantTreeTile
+  energyCost: 3

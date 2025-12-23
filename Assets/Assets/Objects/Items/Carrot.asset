@@ -20,3 +20,7 @@ MonoBehaviour:
   onItemUsed: {fileID: 0}
   crop: {fileID: 0}
   tree: {fileID: 0}
+  isWeapon: 0
+  damage: 10
+  price: 100
+  canBeSold: 1

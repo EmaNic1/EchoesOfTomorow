@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 public class ToolControler : MonoBehaviour
 {
     CharacterController2D character;
+    Charater charaterenergy;
     Rigidbody2D rb; // Object
     ToolBarController toolBarController;
     Animator animator;
@@ -14,14 +15,17 @@ public class ToolControler : MonoBehaviour
     [SerializeField] TileMapReadController tileMapReadController;
     [SerializeField] float maxDistance = 1.5f;
     [SerializeField] ToolAction onTilePickUp;
+    [SerializeField] int weaponEnergyCost = 5;
     AttackController attackController;
     //[SerializeField] CropsManager cropsManager;
     //[SerializeField] TileData plowableTiles;
     Vector3Int selecetedTilePosition;
     bool selected;
 
+
     private void Awake()
     {
+        charaterenergy = GetComponent<Charater>();
         character = GetComponent<CharacterController2D>();
         rb = GetComponent<Rigidbody2D>();
         toolBarController = GetComponent<ToolBarController>();
@@ -67,8 +71,15 @@ public class ToolControler : MonoBehaviour
             return;
         }
 
+        //EnergyCost(weaponEnergyCost);
+
         attackController.Attack(item.damage, character.lastMotionVector);
 
+    }
+
+    private void EnergyCost(int energyCost)
+    {
+        charaterenergy.GetTired(energyCost);
     }
 
     private void SelectTile()
@@ -105,6 +116,8 @@ public class ToolControler : MonoBehaviour
             return false;//įrankis neturi world veiksmo logikos
         }
 
+        //EnergyCost(item.onAction.energyCost);
+
         //Paleidžia įrankio animaciją.
         animator.SetTrigger("act");
         bool complete = item.onAction.OnApply(position); //Panaudojame įrankį pasaulyje
@@ -136,6 +149,8 @@ public class ToolControler : MonoBehaviour
             {
                 return; //įrankis neturi Tilemap veiksmo logikos
             }
+
+            //EnergyCost(item.onTileMapAction.energyCost);
 
             //Paleidžia įrankio animaciją.
             animator.SetTrigger("act");

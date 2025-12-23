@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: AegasDialog
   m_EditorClassIdentifier: Assembly-CSharp::DialogContainer
   line:
-  - Labas, as Aegas
+  - Hello, I'am Aegas
+  - I'am mage in this world!
+  - If you want you can sell or buy items in my shop.
+  - Good luck!
   actor: {fileID: 11400000, guid: 58c06e73cba6b9640b4f8632f8225d3b, type: 2}

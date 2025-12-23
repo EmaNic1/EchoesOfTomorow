@@ -19,3 +19,8 @@ MonoBehaviour:
   onTileMapAction: {fileID: 11400000, guid: 9ec11c76b03f2ed4380dce095b4c4aa8, type: 2}
   onItemUsed: {fileID: 11400000, guid: 9ec11c76b03f2ed4380dce095b4c4aa8, type: 2}
   crop: {fileID: 11400000, guid: dedd94018e9d52144873447033350c2f, type: 2}
+  tree: {fileID: 0}
+  isWeapon: 0
+  damage: 10
+  price: 50
+  canBeSold: 1

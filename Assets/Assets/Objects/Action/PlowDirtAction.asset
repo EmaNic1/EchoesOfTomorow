@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6de25686793f8f4d92781908cc9de7e, type: 3}
   m_Name: PlowDirtAction
   m_EditorClassIdentifier: Assembly-CSharp::PlowTile
+  energyCost: 3
   canPlow:
   - {fileID: 11400000, guid: 3dcf3ec9ac9ebbc42a7a1505afd562cd, type: 2}

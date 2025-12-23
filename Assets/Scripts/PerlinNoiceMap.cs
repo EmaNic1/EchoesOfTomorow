@@ -31,6 +31,28 @@ public class ZoneMapGenerator : MonoBehaviour
     // private Transform player;
     // [SerializeField] private Vector2Int playerStartTilePos = new Vector2Int(39, 17);
 
+    [Header("Raudonas enemy 1")]
+    [SerializeField] private GameObject enemy1;
+    [SerializeField] private Vector2 enemy1StartTilePos1 = new Vector2(18.43f, 23.48f);
+
+    [Header("Raudonas enemy 2")]
+    [SerializeField] private GameObject enemy2;
+    [SerializeField] private Vector2 enemy1StartTilePos2 = new Vector2(14.47f, 17.45f);
+
+    [Header("Raudonas enemy 3")]
+    [SerializeField] private GameObject enemy3;
+    [SerializeField] private Vector2 enemy1StartTilePos3 = new Vector2(22.52f, 16.48f);
+
+    [Header("Raudonas enemy 4")]
+    [SerializeField] private GameObject enemy4;
+    [SerializeField] private Vector2 enemy1StartTilePos4 = new Vector2(13.44f, 14.43f);
+
+    [Header("Raudonas enemy 5")]
+    [SerializeField] private GameObject enemy5;
+    [SerializeField] private Vector2 enemy1StartTilePos5 = new Vector2(22.5f, 12.49f);
+
+    
+
     [Header("Kamstukas")]
     [SerializeField] private GameObject kamstukasPrefab;
     [SerializeField] private Vector2Int kamstukasTilePos = new Vector2Int(42, 20);
@@ -73,15 +95,99 @@ public class ZoneMapGenerator : MonoBehaviour
         SpawnDarlo();
         SpawnAegas();
         SpawnMege();
-        //PlacePlayer();
+
+        PlayceEnemey1();
+        PlayceEnemey2();
+        PlayceEnemey3();
+        PlayceEnemey4();
+        PlayceEnemey5();
+
+        
     }
 
-    // private void PlacePlayer()
-    // {
-    //     Vector3Int cell = new Vector3Int(playerStartTilePos.x, playerStartTilePos.y, 0);
-    //     Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
-    //     player.position = worldPos;
-    // }
+
+
+    private void PlayceEnemey1()
+    {
+        // konvertuojam tile koordinatę į int
+        Vector3Int cell = new Vector3Int(
+            Mathf.FloorToInt(enemy1StartTilePos1.x),
+            Mathf.FloorToInt(enemy1StartTilePos1.y),
+            0
+        );
+
+        // gaunam world poziciją
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        // SPAWNINAM enemy prefabą scenoje
+        Instantiate(enemy1, worldPos, Quaternion.identity);
+    }
+
+
+    private void PlayceEnemey2()
+    {
+         // konvertuojam tile koordinatę į int
+        Vector3Int cell = new Vector3Int(
+            Mathf.FloorToInt(enemy1StartTilePos2.x),
+            Mathf.FloorToInt(enemy1StartTilePos2.y),
+            0
+        );
+
+        // gaunam world poziciją
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        // SPAWNINAM enemy prefabą scenoje
+        Instantiate(enemy2, worldPos, Quaternion.identity);
+    }
+
+    private void PlayceEnemey3()
+    {
+         // konvertuojam tile koordinatę į int
+        Vector3Int cell = new Vector3Int(
+            Mathf.FloorToInt(enemy1StartTilePos3.x),
+            Mathf.FloorToInt(enemy1StartTilePos3.y),
+            0
+        );
+
+        // gaunam world poziciją
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        // SPAWNINAM enemy prefabą scenoje
+        Instantiate(enemy3, worldPos, Quaternion.identity);
+    }
+
+    private void PlayceEnemey4()
+    {
+        // konvertuojam tile koordinatę į int
+        Vector3Int cell = new Vector3Int(
+            Mathf.FloorToInt(enemy1StartTilePos4.x),
+            Mathf.FloorToInt(enemy1StartTilePos4.y),
+            0
+        );
+
+        // gaunam world poziciją
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        // SPAWNINAM enemy prefabą scenoje
+        Instantiate(enemy4, worldPos, Quaternion.identity);
+    }
+
+    private void PlayceEnemey5()
+    {
+        // konvertuojam tile koordinatę į int
+        Vector3Int cell = new Vector3Int(
+            Mathf.FloorToInt(enemy1StartTilePos5.x),
+            Mathf.FloorToInt(enemy1StartTilePos5.y),
+            0
+        );
+
+        // gaunam world poziciją
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        // SPAWNINAM enemy prefabą scenoje
+        Instantiate(enemy5, worldPos, Quaternion.identity);
+    }
+
 
     private void SpawnKamstukas()
     {

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98af39590246754a9b791a709d22cc5, type: 3}
   m_Name: Mine
   m_EditorClassIdentifier: Assembly-CSharp::GatherResoursceNode
+  energyCost: 5
   sizeOfInteractableArea: 1
   canHitNodesOfType: 02000000

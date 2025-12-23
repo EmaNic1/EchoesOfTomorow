@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class ItemDragAndDropController : MonoBehaviour
 {
-    [SerializeField] private ItemSlot itemSlot;//saugo paimta objekta
+    [SerializeField] public ItemSlot itemSlot;//saugo paimta objekta
     [SerializeField] private GameObject itemIcon;//rodoma objekto iconole
     [SerializeField] private ItemContainer inventory;//nuoroda i inventoriu
 
@@ -76,7 +76,7 @@ public class ItemDragAndDropController : MonoBehaviour
     /// <summary>
     /// Atnaujina objekto iconele(ta kuri yra po pelyte)
     /// </summary>
-    private void UpdateIcon()
+    public void UpdateIcon()
     {
         if (itemSlot.items == null)
         {
@@ -87,5 +87,16 @@ public class ItemDragAndDropController : MonoBehaviour
             itemIcon.SetActive(true);
             itemIconImage.sprite = itemSlot.items.icon;
         }
+    }
+
+    public bool CheckForSale()
+    {
+        if(itemSlot.items == null) { return false;}
+        if(itemSlot.items.canBeSold == false)
+        {
+            return false;
+        }
+
+        return true;
     }
 }

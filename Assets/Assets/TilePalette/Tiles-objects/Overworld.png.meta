@@ -17252,7 +17252,7 @@ TextureImporter:
       name: Overworld_775
       rect:
         serializedVersion: 2
-        x: 272
+        x: 271
         y: 208
         width: 16
         height: 16
@@ -17271,13 +17271,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overworld_776
+      name: store
       rect:
         serializedVersion: 2
-        x: 288
-        y: 208
-        width: 16
-        height: 16
+        x: 290
+        y: 135
+        width: 76
+        height: 79
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -24644,7 +24644,6 @@ TextureImporter:
       Overworld_773: -1708800787
       Overworld_774: -1807749617
       Overworld_775: -922130847
-      Overworld_776: 153657835
       Overworld_777: 2137328103
       Overworld_778: 1880700250
       Overworld_779: 955729851
@@ -24893,6 +24892,7 @@ TextureImporter:
       Overworld_999: 1579655388
       Seeds: 1529104040
       StonePile: 1268423455
+      store: 153657835
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

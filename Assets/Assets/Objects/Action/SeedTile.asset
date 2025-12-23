@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4997146d3d70e547a4eedee59dd2852, type: 3}
   m_Name: SeedTile
   m_EditorClassIdentifier: Assembly-CSharp::SeedTile
+  energyCost: 3

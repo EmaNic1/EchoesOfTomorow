@@ -15,6 +15,8 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
 
     int myIndex;//mygtuko vieta inventoriuje
 
+    ItemPanel itemPanel;
+
     /// <summary>
     /// Atitinkama vieta su indeksu
     /// </summary>
@@ -22,6 +24,11 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
     public void SetIndex(int index)
     {
         myIndex = index;
+    }
+
+    public void SetItemPanel(ItemPanel source)
+    {
+        itemPanel = source;
     }
 
     /// <summary>
@@ -61,7 +68,7 @@ public class InventoryButton : MonoBehaviour, IPointerClickHandler
     /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
-        ItemPanel itemPanel = transform.parent.GetComponent<ItemPanel>();
+        //ItemPanel itemPanel = transform.parent.GetComponent<ItemPanel>();
         itemPanel.OnClick(myIndex);
     }
 

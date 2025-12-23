@@ -22,6 +22,10 @@ public class TimeAgent : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.instance.timeController.Unsubscribe(this);
+        if (GameManager.instance != null && GameManager.instance.timeController != null)
+        {
+            GameManager.instance.timeController.Unsubscribe(this);
+        }
     }
+
 }

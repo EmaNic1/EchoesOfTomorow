@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5dd1197db3268140989a9b713f52e67, type: 3}
+  m_Name: StoreContentDarlo
+  m_EditorClassIdentifier: Assembly-CSharp::ItemContainer
+  slot:
+  - items: {fileID: 11400000, guid: 04b402d957fce5342a2437fa19586e93, type: 2}
+    count: 0
+  - items: {fileID: 11400000, guid: b8dec0cbd2e87404c85e6c09b691df2e, type: 2}
+    count: 0
+  - items: {fileID: 11400000, guid: abdae45a25405d344a63b37bcc37edd4, type: 2}
+    count: 0
+  - items: {fileID: 11400000, guid: 8aeb67ce567051b488abadf5ae7cb2de, type: 2}
+    count: 0
+  - items: {fileID: 11400000, guid: 9f8ab1dff92df2840b7cde8047ef3657, type: 2}
+    count: 0
+  - items: {fileID: 11400000, guid: 12ab86cd0563cc54ba208cd4f278afe9, type: 2}
+    count: 0
