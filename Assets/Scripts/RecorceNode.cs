@@ -16,6 +16,7 @@ public class RecorceNode : ToolHit
     [SerializeField] int dropCount = 5;
     [SerializeField] float spread = 0.7f;
     [SerializeField] ResourceNodeType nodeType;//koks resurso tipas
+    [SerializeField] AudioClip onOpenAudio;
 
 
     public override void Hit()
@@ -37,6 +38,7 @@ public class RecorceNode : ToolHit
             // pozicija nustatoma pagal apskaičiuotą poziciją
             //GameObject go = Instantiate(pickUpDrop);
             //go.transform.position = position;
+            AudioManager.instance.Play(onOpenAudio);
         }
 
         // Destroy the object

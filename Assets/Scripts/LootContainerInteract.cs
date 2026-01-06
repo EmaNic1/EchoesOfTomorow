@@ -7,6 +7,7 @@ public class LootContainerInteract : Interactable
     [SerializeField] bool open;
 
     [SerializeField] ItemContainer itemContainer;
+    [SerializeField] AudioClip onOpenAudio;
 
 
     public override void Interact(Charater charater)
@@ -28,6 +29,7 @@ public class LootContainerInteract : Interactable
         closedChest.SetActive(false);
         openedChest.SetActive(true);
         charater.GetComponent<ItemContainerInteractController>().Open(itemContainer, transform);
+        AudioManager.instance.Play(onOpenAudio);
     }
 
     public void Close(Charater charater)
@@ -37,5 +39,6 @@ public class LootContainerInteract : Interactable
         closedChest.SetActive(true);
         openedChest.SetActive(false);
         charater.GetComponent<ItemContainerInteractController>().Close();
+        AudioManager.instance.Play(onOpenAudio);
     }
 }

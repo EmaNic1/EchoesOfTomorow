@@ -11,6 +11,7 @@ public class QuestManager : MonoBehaviour
 
     [Header("Visos profesijų knygos")]
     public List<QuestBookData> allBooks;  // <- Čia pridedi visų knygų reference
+    [SerializeField] AudioClip onOpenAudio;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class QuestManager : MonoBehaviour
                 if (quest.questId == questId)
                 {
                     quest.currentAmount = quest.requiredAmount;
+                    AudioManager.instance.Play(onOpenAudio);
                     Debug.Log($"Quest {questId} completed");
                     return;
                 }
@@ -45,6 +47,7 @@ public class QuestManager : MonoBehaviour
 
                     if (quest.completed)
                     {
+                        AudioManager.instance.Play(onOpenAudio);
                         Debug.Log($"Quest {questId} completed!");
                     }
 

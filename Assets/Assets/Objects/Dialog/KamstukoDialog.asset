@@ -17,19 +17,14 @@ MonoBehaviour:
   - You're probably wondering what kind of machine this is. We called that machine
     a time node. Every now and then, the machine sends people back to the past, when
     the world wasn't... destroyed.
-  - Calm down. And so from the past. As far as you are concerned, you are now in
-    the future.
-  - Some kind of technology... Don't get too carried away, you won't understand it
-    now anyway. The most important thing now is for you to survive here... If you
-    can.
   - So this place is called the Valley of Ruins. We named it that way because of
     how everything looks now. Long ago, this place was amazing. But that's not what
     we're talking about now...
-  - The survivors have formed communities, trying to survive in their own ways. You
-    too will have to find a way to survive. Here, take this paper, it will help you
-    decide how you can help our community.
-  - And before I forget, here's a detour map. The brightest places on the map are
-    now safe. I would advise you to be careful of the dark places on the map, after
-    the crisis, strange things started happening here...
+  - 'The survivors have formed communities, trying to survive in their own ways.
+    You too will have to find a way to survive. '
+  - Before you start doing anything, you must choose a profession that will help
+    our community grow.
+  - And before I forget, I want to warn you! Be careful of the nearby forest... After
+    the crisis, strange things started happening there.
   - Well, I wish you luck. Don't die.
   actor: {fileID: 11400000, guid: 56834ef145f5aad4f96f7363e62e6c54, type: 2}

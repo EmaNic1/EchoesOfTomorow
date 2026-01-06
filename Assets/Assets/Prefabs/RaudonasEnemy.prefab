@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BreakableObjeckt
   hp: 5
+  onOpenAudio: {fileID: 8300000, guid: b32cbf0d142f9d64392fd6e256afb3db, type: 3}
 --- !u!114 &6911389617503579979
 MonoBehaviour:
   m_ObjectHideFlags: 0

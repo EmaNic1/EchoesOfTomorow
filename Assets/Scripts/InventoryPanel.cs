@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class InventoryPanel : ItemPanel
 {
+    [SerializeField] AudioClip onOpenAudio;
+
     /// <summary>
     /// Paspaudis ant objekto, ji iškviečia GameManager.instance.dragAndDropController.OnClick(...)
     /// </summary>
@@ -17,6 +19,10 @@ public class InventoryPanel : ItemPanel
         Show(); // atvaizduoja inventorių ekrane
     }
 
-    private void OnEnable() { inventory.OnInventoryChanged += Show; } 
+    private void OnEnable() 
+    { 
+        inventory.OnInventoryChanged += Show;        
+        AudioManager.instance.Play(onOpenAudio);
+    } 
     private void OnDisable() { inventory.OnInventoryChanged -= Show; }
 }

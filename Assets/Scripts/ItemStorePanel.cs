@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemStorePanel : ItemPanel
 {
     [SerializeField] Traiding traiding;
+    [SerializeField] AudioClip onOpenAudio;
 
     public override void OnClick(int id)
     {
@@ -23,11 +24,13 @@ public class ItemStorePanel : ItemPanel
     private void BuyItem(int id)
     {
         traiding.BuyItem(id);
+        AudioManager.instance.Play(onOpenAudio);
     }
 
     private void SellItem()
     {
         traiding.SellItem();
+        AudioManager.instance.Play(onOpenAudio);
     }
 
 

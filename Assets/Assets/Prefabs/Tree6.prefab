@@ -157,6 +157,7 @@ MonoBehaviour:
   dropCount: 5
   spread: 0.7
   nodeType: 1
+  onOpenAudio: {fileID: 8300000, guid: 0a7624eb25a2ca64c961dd1becfef3ea, type: 3}
 --- !u!114 &3678425966962450136
 MonoBehaviour:
   m_ObjectHideFlags: 0

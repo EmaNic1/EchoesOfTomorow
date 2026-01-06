@@ -7,6 +7,7 @@ public class LevelUpUI : MonoBehaviour
     public static LevelUpUI Instance;
 
     public TMP_Text levelUpText;
+    [SerializeField] AudioClip onOpenAudio;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class LevelUpUI : MonoBehaviour
         StopAllCoroutines();
         levelUpText.text = message;
         gameObject.SetActive(true); // įjungiam panel su tekstu
+        AudioManager.instance.Play(onOpenAudio);
         StartCoroutine(HideAfterSeconds(duration));
     }
 
