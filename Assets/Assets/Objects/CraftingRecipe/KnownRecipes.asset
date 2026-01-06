@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KnownRecipes
   m_EditorClassIdentifier: Assembly-CSharp::RecipeList
   recipes:
-  - {fileID: 11400000, guid: f75ae48c21a7cd34bb350bf99bb8b1bd, type: 2}
+  - {fileID: 11400000, guid: a1c433c5c50a50a4d9e7df9be19221f3, type: 2}
   - {fileID: 11400000, guid: c987f3fa1de413a4f8436ff534abd0af, type: 2}
   - {fileID: 11400000, guid: 5902b18706f235745a2a1acf60d3c4cf, type: 2}
   - {fileID: 11400000, guid: 2d398af2ffaeefb4e88dfd45e66d8ba2, type: 2}

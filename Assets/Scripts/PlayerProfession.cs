@@ -43,6 +43,21 @@ public class PlayerProfession : MonoBehaviour
         Debug.Log($"{currentProfession.type} pasiekė 2 lygį!");
     }
 
+    public void TryLevelUp(QuestBookData book)
+    {
+        if (level >= 2)
+            return;
+
+        if (QuestManager.Instance.AreAllQuestsCompleted(book))
+        {
+            LevelUp();
+        }
+        else
+        {
+            Debug.Log("Dar neįvykdytos visos užduotys");
+        }
+    }
+
     public bool HasProfession(ProfessionTypes type)
     {
         return currentProfession != null && currentProfession.type == type;

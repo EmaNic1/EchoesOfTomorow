@@ -150,3 +150,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55c7360c245c4a48923d5fe1bfa9cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BookInteractable
+  bookData: {fileID: 11400000, guid: 30d59234a48c1bd45bca9313a2fbe8a5, type: 2}

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Questu valdymo klase (veliau)
@@ -8,22 +9,58 @@ public class QuestManager : MonoBehaviour
 {
     public static QuestManager Instance;
 
-    //public NPCInteractable fisherman;//cia kaip pvz
+    [Header("Visos profesijų knygos")]
+    public List<QuestBookData> allBooks;  // <- Čia pridedi visų knygų reference
 
     private void Awake()
     {
         Instance = this;
     }
 
-    // Ateityje čia valdysime quest progresą
-    public void OnQuestCompleted(string questId)
+    public void CompleteQuest(string questId)
     {
-        Debug.Log("Quest completed: " + questId);
+        foreach (var book in allBooks)
+        {
+            foreach (var quest in book.quests)
+            {
+                if (quest.questId == questId)
+                {
+                    quest.currentAmount = quest.requiredAmount;
+                    Debug.Log($"Quest {questId} completed");
+                    return;
+                }
+            }
+        }
+    }
 
-        //Cia kai pvz
-        //if (questId == "FISHING_INTRO")
-        //{
-            //fisherman.UnlockTalking();
-        //}
+    public void AddProgress(string questId, int amount = 1)
+    {
+        foreach (var book in allBooks)
+        {
+            foreach (var quest in book.quests)
+            {
+                if (quest.questId == questId && !quest.completed)
+                {
+                    quest.currentAmount += amount;
+
+                    if (quest.completed)
+                    {
+                        Debug.Log($"Quest {questId} completed!");
+                    }
+
+                    return;
+                }
+            }
+        }
+    }
+
+    public bool AreAllQuestsCompleted(QuestBookData book)
+    {
+        foreach (var quest in book.quests)
+        {
+            if (!quest.completed)
+                return false;
+        }
+        return true;
     }
 }

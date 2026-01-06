@@ -126,6 +126,8 @@ public class TileMapCropsManager : TimeAgent
         targetTilemap.SetTile(position, seeded);
 
         tile.crop = toSeed;
+
+        QuestManager.Instance.AddProgress("PLANT_5_CROPS", 1);//questas
     }
 
     public void VisualizeTile(CropTile cropTile)
@@ -178,5 +180,7 @@ public class TileMapCropsManager : TimeAgent
             tile.Harvested();
             VisualizeTile(tile);
         }
+
+        QuestManager.Instance.AddProgress("HARVEST_5_PLANTS", 1);
     }
 }

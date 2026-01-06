@@ -109,16 +109,19 @@ public class DialogSystem : MonoBehaviour
     {
         Debug.Log("Dialog has ended.");
 
-        // ateityje — čia galima priskirti quest progresą:
-        // QuestManager.Instance.OnNpcDialogFinished(currentNpc);
+        if (currentNpc != null)
+        {
+            currentNpc.canTalk = false; // 🔒 UŽRAKINAM NPC
+        }
 
-        currentNpc = null;
         Show(false);
 
-        // Jeigu tai yra pirmas dialogas su Kamštuku
+        // Specifinė Kamštuko logika
         if (currentDialog.actor.name == "Kamstukas")
         {
             GameManager.instance.selectProfession.uiPanel.SetActive(true);
         }
+
+        currentNpc = null;
     }
 }

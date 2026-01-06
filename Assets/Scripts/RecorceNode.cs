@@ -41,6 +41,7 @@ public class RecorceNode : ToolHit
 
         // Destroy the object
         Destroy(gameObject);
+        QuestManager.Instance.AddProgress("CHOP_5_TREES", 1);
     }
 
     /// <summary>

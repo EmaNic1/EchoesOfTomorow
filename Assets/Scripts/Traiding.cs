@@ -53,6 +53,8 @@ public class Traiding : MonoBehaviour
             itemToSell.Clear();
             GameManager.instance.dragAndDropController.UpdateIcon();
         }
+        QuestManager.Instance.AddProgress("GO_TO_SELLING", 1);//questas
+        QuestManager.Instance.AddProgress("GO_SELL", 1);//questas
     }
 
     internal void BuyItem(int id)
@@ -66,5 +68,7 @@ public class Traiding : MonoBehaviour
             playerInventory.Add(itemToBuy);
             inventoryItemPanel.Show();
         }
+        QuestManager.Instance.AddProgress("GO_TO_SHOPING", 1);//questas
+        QuestManager.Instance.AddProgress("GO_SHOPPING", 1);//questas
     }
 }

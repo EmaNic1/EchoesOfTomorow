@@ -151,3 +151,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCInteractable
   dialog: {fileID: 11400000, guid: ffa24c97ed44f4745b789aa6741b6868, type: 2}
+  canTalk: 1

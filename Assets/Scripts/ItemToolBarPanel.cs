@@ -71,4 +71,10 @@ public class ItemToolBarPanel : ItemPanel
         if (controller != null)
             controller.onChange -= HighLight;
     }
+
+    public override void Show()
+    {
+        base.Show();
+        controller.UpdateHighlitghIcon();
+    }
 }

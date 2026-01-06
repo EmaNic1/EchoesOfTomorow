@@ -8,14 +8,14 @@ public class NPCInteractable : Interactable
 
     public override void Interact(Charater charater)
     {
-        //if (!canTalk)
-        //{
-            //Debug.Log("NPC nenori/negali dabar kalbėti.");
-            //return;
-        //}
+        if (!canTalk)
+        {
+            Debug.Log("NPC nenori/negali dabar kalbėti.");
+            return;
+        }
 
         GameManager.instance.dialogSystem.Initialize(dialog, this);
-       // canTalk = false; // <-- dabar tik vieną kartą per ciklą
+        //canTalk = false; // <-- dabar tik vieną kartą per ciklą
     }
 
     public void UnlockTalking()

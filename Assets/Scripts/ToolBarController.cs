@@ -57,7 +57,7 @@ public class ToolBarController : MonoBehaviour
         }
     }
 
-    public void UpdateHighlitghIcon(int id)
+    public void UpdateHighlitghIcon(int id = 0)
     {
         Items items = GetItems;
         if(items == null)

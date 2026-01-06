@@ -16,7 +16,13 @@ MonoBehaviour:
   stackable: 1
   icon: {fileID: 1268423455, guid: bd0a7d101cf4c7e469fb65d5db944c52, type: 3}
   onAction: {fileID: 0}
-  onTileMapAction: {fileID: 0}
-  onItemUsed: {fileID: 0}
+  onTileMapAction: {fileID: 11400000, guid: 6c1a471bef55aa645a7dec097b849218, type: 2}
+  onItemUsed: {fileID: 11400000, guid: 6c1a471bef55aa645a7dec097b849218, type: 2}
   crop: {fileID: 0}
   tree: {fileID: 0}
+  iconHighlight: 1
+  itemPrefab: {fileID: 8532361800116906797, guid: e07b64c11bf4b164c9f0a94a475b11f3, type: 3}
+  isWeapon: 0
+  damage: 10
+  price: 100
+  canBeSold: 1

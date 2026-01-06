@@ -182,6 +182,8 @@ public class TileMapTreeController : TimeAgent
         tree.tree = toPlant;
 
         targetTilemap.SetTile(position, plantedTile);
+
+        QuestManager.Instance.AddProgress("PLANT_5_TREES", 1);
     }
 
     internal void PickUp(Vector3Int gridPosition)
@@ -201,6 +203,7 @@ public class TileMapTreeController : TimeAgent
             tile.Harvested();
             VisualizeTile(tile);
         }
+        QuestManager.Instance.AddProgress("CHOP_5_TREES", 1);
     }
 
     internal bool Check(Vector3Int position)
