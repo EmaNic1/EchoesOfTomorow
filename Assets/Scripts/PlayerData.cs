@@ -10,6 +10,7 @@ public class PlayerData : ScriptableObject
 
     public void ResetData()
     {
+        Debug.Log("PLAYER DATA RESET");
         characterName = "";
         characterGender = Gender.Female;
         saveSlotId = -1;

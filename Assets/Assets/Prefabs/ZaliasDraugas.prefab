@@ -188,9 +188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSpawner
   toSpawn: {fileID: 11400000, guid: d1886e529e4144641bb3139448069054, type: 2}
-  count: 1
+  count: 2
   spread: 2
-  probability: 0.001
+  probability: 0.01
 --- !u!114 &1801665398756408856
 MonoBehaviour:
   m_ObjectHideFlags: 0

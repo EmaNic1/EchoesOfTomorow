@@ -51,6 +51,21 @@ public class ZoneMapGenerator : MonoBehaviour
     [SerializeField] private GameObject enemy5;
     [SerializeField] private Vector2 enemy1StartTilePos5 = new Vector2(22.5f, 12.49f);
 
+
+
+
+    [Header("Zalias Blob 1")]
+    [SerializeField] private GameObject blob1;
+    [SerializeField] private Vector2 blob1StartTilePos1 = new Vector2(42.56f, 14.51f);
+
+    [Header("Zalias Blob 2")]
+    [SerializeField] private GameObject blob2;
+    [SerializeField] private Vector2 blob2StartTilePos2 = new Vector2(43.49f, 37.44f);
+
+    [Header("Zalias Blob 3")]
+    [SerializeField] private GameObject blob3;
+    [SerializeField] private Vector2 blob3StartTilePos3 = new Vector2(9.48f, 34.47f);
+
     
 
     [Header("Kamstukas")]
@@ -101,6 +116,11 @@ public class ZoneMapGenerator : MonoBehaviour
         PlayceEnemey3();
         PlayceEnemey4();
         PlayceEnemey5();
+
+
+        PlayceBlob1();
+        PlayceBlob2();
+        PlayceBlob3();
 
         
     }
@@ -186,6 +206,55 @@ public class ZoneMapGenerator : MonoBehaviour
 
         // SPAWNINAM enemy prefabą scenoje
         Instantiate(enemy5, worldPos, Quaternion.identity);
+    }
+
+
+    private void PlayceBlob1()
+    {
+        // konvertuojam tile koordinatę į int
+        Vector3Int cell = new Vector3Int(
+            Mathf.FloorToInt(blob1StartTilePos1.x),
+            Mathf.FloorToInt(blob1StartTilePos1.y),
+            0
+        );
+
+        // gaunam world poziciją
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        // SPAWNINAM enemy prefabą scenoje
+        Instantiate(blob1, worldPos, Quaternion.identity);
+    }
+
+    private void PlayceBlob2()
+    {
+        // konvertuojam tile koordinatę į int
+        Vector3Int cell = new Vector3Int(
+            Mathf.FloorToInt(blob2StartTilePos2.x),
+            Mathf.FloorToInt(blob2StartTilePos2.y),
+            0
+        );
+
+        // gaunam world poziciją
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        // SPAWNINAM enemy prefabą scenoje
+        Instantiate(blob2, worldPos, Quaternion.identity);
+    }
+
+    private void PlayceBlob3()
+    {
+        // konvertuojam tile koordinatę į int
+        Vector3Int cell = new Vector3Int(
+            Mathf.FloorToInt(blob3StartTilePos3.x),
+            Mathf.FloorToInt(blob3StartTilePos3.y),
+            0
+        );
+
+        // gaunam world poziciją
+        Vector3 worldPos = groundTilemap.CellToWorld(cell) + new Vector3(0.5f, 0.5f, 0);
+
+        // SPAWNINAM enemy prefabą scenoje
+        Instantiate(blob3, worldPos, Quaternion.identity);
     }
 
 

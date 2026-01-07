@@ -14,8 +14,9 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        SetGenderFemale();
-        UpdateName();
+        selectedGender = Gender.Female;
+        genderText.text = "Female";
+        nameInputField.text = "";
     }
 
     public void StartGame()

@@ -170,6 +170,15 @@ public class ItemContainer : ScriptableObject
         return true;
     }
 
+    public void ClearAll()
+    {
+        foreach (var s in slot)
+        {
+            s.Clear();
+        }
+        NotifyChanged();
+    }
+
 
     // internal object CheckFreeSpace()
     // {

@@ -1152,6 +1152,12 @@ MonoBehaviour:
   enemy1StartTilePos4: {x: 13.44, y: 14.43}
   enemy5: {fileID: 5694547360515829559, guid: 06288a5bb08856d41a9cb098acf7a673, type: 3}
   enemy1StartTilePos5: {x: 22.5, y: 12.49}
+  blob1: {fileID: 8491994220262689692, guid: a10a03fb5eba1c54baa21f696fc86bd4, type: 3}
+  blob1StartTilePos1: {x: 42.56, y: 14.51}
+  blob2: {fileID: 8491994220262689692, guid: a10a03fb5eba1c54baa21f696fc86bd4, type: 3}
+  blob2StartTilePos2: {x: 43.49, y: 37.44}
+  blob3: {fileID: 8491994220262689692, guid: a10a03fb5eba1c54baa21f696fc86bd4, type: 3}
+  blob3StartTilePos3: {x: 9.48, y: 34.47}
   kamstukasPrefab: {fileID: 120069975871909796, guid: 9b468b180d4229f44a7391746c811654, type: 3}
   kamstukasTilePos: {x: 32, y: 23}
   darloPrefab: {fileID: 4966459893353724124, guid: 824f5a53353c8214787f10d8e8ff49b6, type: 3}

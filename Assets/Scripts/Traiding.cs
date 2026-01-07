@@ -1,6 +1,3 @@
-using System;
-using Mono.Cecil.Cil;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Traiding : MonoBehaviour
@@ -9,18 +6,15 @@ public class Traiding : MonoBehaviour
     [SerializeField] GameObject inventoryPanel;
 
     [SerializeField] ItemPanel inventoryItemPanel;
-
-    Store store;
-
-    CurrencySystem money;
-
     [SerializeField] ItemStorePanel itemStorePanel;
     [SerializeField] ItemContainer playerInventory;
+
+    Store store;
+    CurrencySystem money;
 
     void Awake()
     {
         money = GetComponent<CurrencySystem>();
-        //itemStorePanel = GetComponent<ItemStorePanel>();
     }
 
     public void BeginTraiding(Store store)
@@ -39,36 +33,61 @@ public class Traiding : MonoBehaviour
         storePanel.SetActive(false);
         inventoryPanel.SetActive(false);
     }
-    
 
+    // =========================
+    // PARDAVIMAS
+    // =========================
     public void SellItem()
     {
-        if (GameManager.instance.dragAndDropController.CheckForSale() == true)
+        if (!GameManager.instance.dragAndDropController.CheckForSale())
+            return;
+
+        ItemSlot itemSlot = GameManager.instance.dragAndDropController.itemSlot;
+
+        int pricePerItem = itemSlot.items.price;
+        int amount = itemSlot.count;
+
+        int moneyGain;
+
+        // 🧮 MATEMATIKA
+        if (itemSlot.items.stackable)
         {
-            ItemSlot itemToSell = GameManager.instance.dragAndDropController.itemSlot;
-            int moneyGain = itemToSell.items.stackable == true ? 
-            itemToSell.items.price : 
-            itemToSell.items.price;
-            money.Add(moneyGain);
-            itemToSell.Clear();
-            GameManager.instance.dragAndDropController.UpdateIcon();
+            // price × kiekis
+            moneyGain = pricePerItem * amount;
         }
-        QuestManager.Instance.AddProgress("GO_TO_SELLING", 1);//questas
-        QuestManager.Instance.AddProgress("GO_SELL", 1);//questas
+        else
+        {
+            // vienas daiktas
+            moneyGain = pricePerItem;
+        }
+
+        money.Add(moneyGain);
+        itemSlot.Clear();
+        GameManager.instance.dragAndDropController.UpdateIcon();
+
+        QuestManager.Instance.AddProgress("GO_TO_SELLING", 1);
+        QuestManager.Instance.AddProgress("GO_SELL", 1);
     }
 
-    internal void BuyItem(int id)
+    // =========================
+    // PIRKIMAS
+    // =========================
+    public void BuyItem(int id)
     {
         Items itemToBuy = store.storeContent.slot[id].items;
-        int totalPrice = itemToBuy.price;
 
-        if (money.Check(totalPrice) == true)
+        int amountToBuy = 1; // 🔢 kol kas visada 1
+        int totalPrice = itemToBuy.price * amountToBuy;
+
+        // 🧮 MATEMATIKA
+        if (money.Check(totalPrice))
         {
             money.Decrease(totalPrice);
-            playerInventory.Add(itemToBuy);
+            playerInventory.Add(itemToBuy, amountToBuy);
             inventoryItemPanel.Show();
         }
-        QuestManager.Instance.AddProgress("GO_TO_SHOPING", 1);//questas
-        QuestManager.Instance.AddProgress("GO_SHOPPING", 1);//questas
+
+        QuestManager.Instance.AddProgress("GO_TO_SHOPING", 1);
+        QuestManager.Instance.AddProgress("GO_SHOPPING", 1);
     }
 }
